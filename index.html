@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Biznovatech — App + Landing Page + Push Notifications (White Theme)</title>
-<meta name="description" content="Convert your website into an app, launch a high-converting landing page, and re-engage customers with push notifications. Works for iGaming, Stocks/Trading, Crypto, Lottery/Matka & more." />
+<title>Biznovatech — Native Android App + Landing Page + Push Notifications</title>
+<meta name="description" content="Convert your website into a native Android app, launch a high-converting landing page, and re-engage customers with push notifications. Works for iGaming, Stocks/Trading, Crypto, Lottery/Matka & more." />
 <meta name="theme-color" content="#ffffff"/>
 <link rel="canonical" href="https://biznovatech.com/" />
 <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
 
 <!-- Open Graph -->
 <meta property="og:title" content="Biznovatech — App + Landing + Push" />
-<meta property="og:description" content="Own your audience. App + Landing + Push Notifications. No WhatsApp API needed." />
+<meta property="og:description" content="Own your audience. Native Android App + Landing + Push Notifications. No WhatsApp API needed." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://biznovatech.com/og-image.png" />
 <meta property="og:url" content="https://biznovatech.com/" />
@@ -19,35 +19,21 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Biznovatech — App + Landing + Push" />
-<meta name="twitter:description" content="Convert your site to an app, add a high-converting landing page, and re-engage customers with push notifications." />
+<meta name="twitter:description" content="Convert your site to a native Android app, add a high-converting landing page, and re-engage customers with push notifications." />
 <meta name="twitter:image" content="https://biznovatech.com/og-image.png" />
 
 <style>
   :root{
-    /* White + Blue/Yellow accents */
-    --bg:#ffffff;
-    --paper:#f5f7fb;
-    --ink:#0b1c3d;
-    --muted:#5a6a85;
-    --line:#e5e9f2;
-    --brand:#0d6efd;
-    --brand-2:#ffcc00;
-    --ok:#16a34a;
-    --danger:#ef4444;
-    --shadow:0 12px 36px rgba(11,28,61,.08);
-    --ring:0 0 0 3px rgba(13,110,253,.18);
+    --bg:#ffffff; --paper:#f5f7fb; --ink:#0b1c3d; --muted:#5a6a85; --line:#e5e9f2;
+    --brand:#0d6efd; --brand-2:#ffcc00; --ok:#16a34a; --danger:#ef4444;
+    --shadow:0 12px 36px rgba(11,28,61,.08); --ring:0 0 0 3px rgba(13,110,253,.18);
     --radius:16px;
   }
   *{box-sizing:border-box}
   html:focus-within{scroll-behavior:smooth}
-  body{
-    margin:0;padding:0;background:var(--bg);color:var(--ink);
-    font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-  }
+  body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
   a{color:var(--brand);text-decoration:none}
-  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{outline:none; box-shadow:var(--ring)}
+  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:none;box-shadow:var(--ring)}
   img{max-width:100%;display:block;height:auto}
   .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
   .btn{display:inline-block;padding:14px 18px;border-radius:12px;font-weight:800;border:1px solid var(--brand);background:var(--brand);color:#fff}
@@ -80,27 +66,11 @@
   .nav-links{display:flex;gap:10px;flex-wrap:wrap}
   .link{padding:10px 12px;border-radius:10px;border:1px solid var(--line);color:var(--ink)}
   .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
-  .step{display:flex;gap:12px;align-items:flex-start}
-  .num{width:34px;height:34px;border-radius:10px;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:900}
   .table{width:100%;border-collapse:collapse;border:1px solid var(--line);border-radius:12px;overflow:hidden}
   .table th,.table td{border-bottom:1px solid var(--line);padding:12px;text-align:left}
   .table th{background:#f9fbff}
-  /* Reviews carousel (pure CSS) */
-  .reviews{position:relative;overflow:hidden}
-  .slides{display:flex;gap:18px;transition:transform .5s ease;will-change:transform}
-  input[name="r"]{display:none}
-  .dots{display:flex;gap:8px;justify-content:center;margin-top:10px}
-  .dot{width:10px;height:10px;border-radius:50%;background:#cbd5e1;cursor:pointer}
-  #r1:checked ~ .slides{transform:translateX(0)}
-  #r2:checked ~ .slides{transform:translateX(-100%)}
-  #r3:checked ~ .slides{transform:translateX(-200%)}
-  #r1:checked ~ .dots label[for="r1"]{background:var(--brand)}
-  #r2:checked ~ .dots label[for="r2"]{background:var(--brand)}
-  #r3:checked ~ .dots label[for="r3"]{background:var(--brand)}
-  /* Footer & sticky contact */
   footer{border-top:1px solid var(--line);margin-top:36px;background:#fff}
   .foot{display:grid;gap:18px;grid-template-columns:2fr 1fr 1fr 1.2fr;padding:22px 0}
-  .foot h4{margin:0 0 10px}
   .contact li{margin:4px 0}
   .sticky{position:fixed;bottom:0;left:0;right:0;background:#ffffffee;backdrop-filter:saturate(140%) blur(8px);border-top:1px solid var(--line);display:flex;justify-content:center;z-index:60}
   .sticky .bar{max-width:1200px;width:100%;padding:8px 20px;display:flex;gap:10px}
@@ -108,22 +78,17 @@
   .wa{background:#25D366;color:#111;border:1px solid #22c55e}
   .tg{background:#229ED9;color:#111;border:1px solid #38bdf8}
   .enq{background:var(--brand-2);color:#111;border:1px solid #f1c40f}
-  /* Forms */
-  .input, textarea{width:100%;background:#fff;border:1px solid var(--line);color:var(--ink);
-    border-radius:12px;padding:12px;outline:none}
-  .input:focus, textarea:focus{box-shadow:var(--ring);border-color:#c6d8ff}
-  /* Accessibility: reduced motion */
-  @media (prefers-reduced-motion: reduce){
-    .slides{transition:none}
-    html:focus-within{scroll-behavior:auto}
-  }
-  /* Mobile responsiveness */
+  .input, textarea, select{width:100%;background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:12px;padding:12px;outline:none}
+  .row{display:flex;gap:10px}
+  .row .w-32{flex:0 0 32%} .row .w-68{flex:1}
+  @media (prefers-reduced-motion: reduce){ .slides{transition:none} html:focus-within{scroll-behavior:auto} }
   @media (max-width: 980px){
-    .hero .grid, .g-4, .g-3, .g-2, .foot{grid-template-columns:1fr}
+    .hero .grid,.g-4,.g-3,.g-2,.foot{grid-template-columns:1fr}
     .nav .link{display:none}
-    body{padding-bottom:84px} /* ensure sticky bar doesn't cover content */
+    body{padding-bottom:84px}
     .card{padding:18px}
     .nav-inner{padding:8px 0}
+    .row{flex-direction:column}
   }
 </style>
 </head>
@@ -131,14 +96,13 @@
 
 <a href="#main" class="visually-hidden" style="position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
 
-<!-- NAV -->
 <header class="nav" role="banner">
   <div class="wrap nav-inner" aria-label="Top Navigation">
     <div class="brand">
       <div class="logo" aria-hidden="true">B</div>
       <div>
         <div style="font-weight:900;letter-spacing:.2px">Biznovatech</div>
-        <div class="muted" style="font-size:12px">App • Landing Page • Push</div>
+        <div class="muted" style="font-size:12px">Native Android App • Landing Page • Push</div>
       </div>
     </div>
     <nav class="nav-links" role="navigation" aria-label="Primary">
@@ -147,27 +111,27 @@
       <a class="link" href="#case-studies">Case Studies</a>
       <a class="link" href="#pricing">Pricing</a>
       <a class="link" href="#faq">FAQ</a>
-      <a class="btn ghost" href="#contact">Talk to Sales</a>
+      <!-- Talk to Sales → WhatsApp -->
+      <a class="btn ghost" href="https://wa.me/17743372572" target="_blank" rel="noopener">Talk to Sales</a>
     </nav>
   </div>
 </header>
 
 <main id="main" tabindex="-1">
-  <!-- HERO -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap grid">
       <div class="card">
         <span class="badge">No WhatsApp API? No problem.</span>
-        <h1 id="hero-title">Own your audience with <span style="color:var(--brand)">App + Landing Page + Push Notifications</span>.</h1>
-        <p class="lead">We convert your existing website into a fast, installable app, build a high-converting landing page, and set up push notifications to bring customers back—perfect for <strong>iGaming</strong>, <strong>Stocks/Trading</strong>, <strong>Crypto</strong>, <strong>Lottery/Matka</strong>, <strong>Adult</strong>, <strong>Escorts</strong> or <em>any niche</em>.</p>
+        <h1 id="hero-title">Own your audience with <span style="color:var(--brand)">Native Android App + Landing Page + Push Notifications</span>.</h1>
+        <p class="lead">We convert your existing website into a fast, <strong>native Android app</strong>, build a high-converting landing page, and set up push notifications to bring customers back—perfect for <strong>iGaming</strong>, <strong>Stocks/Trading</strong>, <strong>Crypto</strong>, <strong>Lottery/Matka</strong>, <strong>Adult</strong>, <strong>Escorts</strong> or <em>any niche</em>.</p>
         <ul class="list" aria-label="Key benefits">
-          <li class="li"><i aria-hidden="true"></i><div><strong>Your App</strong> — PWA or native wrapper (icon, splash, deep links, mirrors).</div></li>
+          <li class="li"><i aria-hidden="true"></i><div><strong>Native Android App</strong> — icon, splash, deep links, mirrors.</div></li>
           <li class="li"><i aria-hidden="true"></i><div><strong>Landing Page</strong> — Install-first design, ad-ready, blazing fast.</div></li>
           <li class="li"><i aria-hidden="true"></i><div><strong>Push Setup</strong> — Daily/segment pushes with a 90-day copy bank.</div></li>
           <li class="li"><i aria-hidden="true"></i><div><strong>Neutral, value-led messaging</strong> tuned for high-risk verticals.</div></li>
         </ul>
         <div class="hero-cta">
-          <a class="btn" href="#contact" aria-label="Get my demo">Get My Demo →</a>
+          <a class="btn" href="#solution" aria-label="Get my demo">Get My Demo →</a>
           <a class="btn alt" href="https://wa.me/17743372572" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp</a>
           <a class="btn ghost" href="https://t.me/mark77771111" target="_blank" rel="noopener" aria-label="Chat on Telegram">Telegram</a>
         </div>
@@ -177,12 +141,49 @@
       <div class="card" id="solution">
         <h2>Quick Demo Request</h2>
         <p class="muted">Share your website; get a live preview of your App + Landing + Push.</p>
+
         <form id="demoForm" style="margin-top:10px" aria-label="Demo request form">
-          <label>Full Name<br/><input class="input" type="text" name="name" placeholder="Your Name" autocomplete="name" required></label><br/><br/>
-          <label>Business / Website URL<br/><input class="input" type="url" name="url" placeholder="https://yourdomain.com" inputmode="url" required></label><br/><br/>
-          <label>Email<br/><input class="input" type="email" name="email" placeholder="you@company.com" autocomplete="email" required></label><br/><br/>
-          <label>Phone / WhatsApp<br/><input class="input" type="tel" name="phone" placeholder="+91…" inputmode="tel" required></label><br/><br/>
-          <label>Notes (optional)<br/><textarea class="input" name="notes" rows="3" placeholder="Industry, KPIs, timelines…"></textarea></label><br/><br/>
+          <label>Full Name<br/>
+            <input class="input" type="text" name="name" placeholder="Your Name" autocomplete="name" required>
+          </label><br/><br/>
+
+          <!-- 1) URL: allow any domain/text -->
+          <label>Business / Website URL<br/>
+            <input class="input" type="text" name="url" placeholder="yourdomain.com or https://yourdomain.com" inputmode="url" required>
+          </label><br/><br/>
+
+          <label>Email<br/>
+            <input class="input" type="email" name="email" placeholder="you@company.com" autocomplete="email" required>
+          </label><br/><br/>
+
+          <!-- 2) International phone: country code + number -->
+          <label>Phone / WhatsApp</label>
+          <div class="row" style="margin-top:6px">
+            <select class="input w-32" name="cc" aria-label="Country code">
+              <option value="+91">🇮🇳 +91 India</option>
+              <option value="+971">🇦🇪 +971 UAE</option>
+              <option value="+1">🇺🇸 +1 USA</option>
+              <option value="+44">🇬🇧 +44 UK</option>
+              <option value="+61">🇦🇺 +61 Australia</option>
+              <option value="+65">🇸🇬 +65 Singapore</option>
+              <option value="+81">🇯🇵 +81 Japan</option>
+              <option value="+49">🇩🇪 +49 Germany</option>
+              <option value="+33">🇫🇷 +33 France</option>
+              <option value="+39">🇮🇹 +39 Italy</option>
+              <option value="+7">🇷🇺 +7 Russia</option>
+              <option value="+34">🇪🇸 +34 Spain</option>
+              <option value="+55">🇧🇷 +55 Brazil</option>
+              <option value="+63">🇵🇭 +63 Philippines</option>
+              <option value="+62">🇮🇩 +62 Indonesia</option>
+            </select>
+            <input class="input w-68" type="tel" name="phone_num" placeholder="Phone number" inputmode="tel" required>
+          </div>
+          <br/>
+
+          <label>Notes (optional)<br/>
+            <textarea class="input" name="notes" rows="3" placeholder="Industry, KPIs, timelines…"></textarea>
+          </label><br/><br/>
+
           <button class="btn" type="submit">Request Demo</button>
           <p class="note" style="margin-top:8px">Prefer chat? <a href="https://wa.me/17743372572" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://t.me/mark77771111" target="_blank" rel="noopener">Telegram</a> · <a href="mailto:sales@biznovatech.com">Email</a></p>
         </form>
@@ -205,7 +206,7 @@
       <div class="card">
         <h3>What You Get</h3>
         <ul class="list">
-          <li class="li"><i aria-hidden="true"></i><div>Installable Android App (PWA / Wrapper)</div></li>
+          <li class="li"><i aria-hidden="true"></i><div>Installable <strong>Native Android App</strong></div></li>
           <li class="li"><i aria-hidden="true"></i><div>High-converting Landing Page (HTML/CSS)</div></li>
           <li class="li"><i aria-hidden="true"></i><div>Push Setup + 90-day Copy Bank</div></li>
           <li class="li"><i aria-hidden="true"></i><div>Docs for mirrors & tracking</div></li>
@@ -222,7 +223,7 @@
     </div>
   </section>
 
-  <!-- EXAMPLES -->
+  <!-- EXAMPLES (unchanged content) -->
   <section id="examples" class="section" aria-labelledby="examples-title">
     <div class="wrap">
       <h2 id="examples-title">Examples & Use-Cases</h2>
@@ -256,12 +257,11 @@
     </div>
   </section>
 
-  <!-- CASE STUDIES -->
+  <!-- CASE STUDIES (unchanged numbers) -->
   <section id="case-studies" class="section alt" aria-labelledby="cases-title">
     <div class="wrap">
       <h2 id="cases-title">Case Studies (illustrative)</h2>
       <p class="muted">Numbers below are realistic scenarios to show impact; your mileage varies by niche, traffic quality, and product funnels.</p>
-
       <div class="grid g-3" style="margin-top:12px">
         <div class="card" role="figure" aria-label="iGaming case study">
           <h3>Case A — iGaming Launch</h3>
@@ -297,14 +297,14 @@
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- FAQ (wording adjusted to native app) -->
   <section id="faq" class="section" aria-labelledby="faq-title">
     <div class="wrap">
       <h2 id="faq-title">Frequently Asked Questions</h2>
       <div class="grid g-2" style="margin-top:12px">
         <div class="card">
           <h3>Do I need to change my website?</h3>
-          <p>No. We wrap or PWA-enable your current site. You keep your CMS & content workflows.</p>
+          <p>No. We convert or wrap your current site into a <strong>native Android app</strong>. You keep your CMS & content workflows.</p>
         </div>
         <div class="card">
           <h3>Is the app on Play Store?</h3>
@@ -339,7 +339,8 @@
         <h3 style="margin-bottom:8px">Discuss with our team for pricing</h3>
         <p class="muted">Share your website, traffic mix (paid/organic), markets, and timelines. We’ll scope deliverables and provide a quote.</p>
         <div class="hero-cta" style="margin-top:8px">
-          <a class="btn" href="#contact">Talk to Sales</a>
+          <!-- Talk to Sales → WhatsApp -->
+          <a class="btn" href="https://wa.me/17743372572" target="_blank" rel="noopener">Talk to Sales</a>
           <a class="btn alt" href="https://wa.me/17743372572" target="_blank" rel="noopener">WhatsApp</a>
           <a class="btn ghost" href="https://t.me/mark77771111" target="_blank" rel="noopener">Telegram</a>
         </div>
@@ -347,41 +348,34 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- CONTACT & OFFICES (form removed) -->
   <section id="contact" class="section" aria-labelledby="contact-title">
     <div class="wrap">
       <h2 id="contact-title">Contact & Offices</h2>
       <div class="grid g-2" style="margin-top:12px">
         <div class="card">
-          <form id="contactForm" aria-label="Contact form">
-            <label>Full Name<br/><input class="input" name="cname" autocomplete="name" required placeholder="Your Name"/></label><br/><br/>
-            <label>Email<br/><input class="input" type="email" name="cemail" autocomplete="email" required placeholder="you@company.com"/></label><br/><br/>
-            <label>Message<br/><textarea class="input" rows="4" name="cmsg" placeholder="Tell us about your goals"></textarea></label><br/><br/>
-            <button class="btn" type="submit">Send Message</button>
-            <p class="note" style="margin-top:8px">Or reach out directly: 
-              <a href="mailto:sales@biznovatech.com">sales@biznovatech.com</a> · 
-              <a href="https://wa.me/17743372572" target="_blank" rel="noopener">WhatsApp</a> · 
-              <a href="https://t.me/mark77771111" target="_blank" rel="noopener">Telegram</a>
-            </p>
-          </form>
+          <h3>Talk to Sales</h3>
+          <p class="muted">Fastest response on WhatsApp.</p>
+          <div class="hero-cta" style="margin-top:8px">
+            <a class="btn" href="https://wa.me/17743372572" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn ghost" href="mailto:sales@biznovatech.com">Email</a>
+            <a class="btn alt" href="https://t.me/mark77771111" target="_blank" rel="noopener">Telegram</a>
+          </div>
         </div>
         <div class="card">
-          <h3>India (Bengaluru)</h3>
-          <p>63, 1st Floor, 16th Main, 8th Cross, BTM 1st Stage,<br/>BTM Layout, Bengaluru, Karnataka 560029</p>
-          <p><strong>Phone/WhatsApp:</strong> +1 774 337 2572</p>
-          <p><a class="chip" href="https://maps.google.com/?q=BTM%201st%20Stage%2C%20Bengaluru%20560029" target="_blank" rel="noopener">Open in Maps</a></p>
-          <hr style="border:none;border-top:1px solid var(--line);margin:14px 0" aria-hidden="true">
-          <h3>Dubai (U.A.E.)</h3>
-          <p>911, Metropolis Tower, Business Bay, Dubai</p>
-          <p><strong>Email:</strong> <a href="mailto:sales@biznovatech.com">sales@biznovatech.com</a></p>
-          <p><a class="chip" href="https://maps.google.com/?q=Metropolis%20Tower%20Business%20Bay%20Dubai" target="_blank" rel="noopener">Open in Maps</a></p>
+          <h3>Offices</h3>
+          <p><strong>India (Bengaluru)</strong><br/>63, 1st Floor, 16th Main, 8th Cross, BTM 1st Stage, BTM Layout, Bengaluru, Karnataka 560029</p>
+          <p><strong>Dubai (U.A.E.)</strong><br/>911, Metropolis Tower, Business Bay, Dubai</p>
+          <div class="list">
+            <a class="chip" href="https://maps.google.com/?q=BTM%201st%20Stage%2C%20Bengaluru%20560029" target="_blank" rel="noopener">India Map</a>
+            <a class="chip" href="https://maps.google.com/?q=Metropolis%20Tower%20Business%20Bay%20Dubai" target="_blank" rel="noopener">Dubai Map</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 </main>
 
-<!-- FOOTER -->
 <footer role="contentinfo">
   <div class="wrap foot">
     <div>
@@ -392,9 +386,9 @@
           <div class="muted" style="font-size:12px">Own your audience.</div>
         </div>
       </div>
-      <p class="muted">App + Landing Page + Push Notifications for iGaming, Trading, Crypto, Lottery/Matka & more.</p>
+      <p class="muted">Native Android App + Landing Page + Push Notifications for iGaming, Trading, Crypto, Lottery/Matka & more.</p>
       <div class="list" style="margin-top:8px">
-        <span class="chip">PWA/Wrapper App</span><span class="chip">Install-first LP</span><span class="chip">Push Cadence</span><span class="chip">Mirrors</span>
+        <span class="chip">Native Android App</span><span class="chip">Install-first LP</span><span class="chip">Push Cadence</span><span class="chip">Mirrors</span>
       </div>
     </div>
     <nav aria-label="Footer">
@@ -426,7 +420,6 @@
   </div>
 </footer>
 
-<!-- STICKY CONTACT BAR -->
 <div class="sticky" aria-label="Quick contact">
   <div class="bar">
     <a class="wa" href="https://wa.me/17743372572" target="_blank" rel="noopener">WhatsApp</a>
@@ -435,50 +428,20 @@
   </div>
 </div>
 
-<!-- Organization JSON-LD -->
+<!-- JSON-LD (kept) -->
 <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Organization",
-  "name":"Biznovatech",
-  "url":"https://biznovatech.com",
-  "logo":"https://biznovatech.com/icon-256.png",
-  "contactPoint":[{
-    "@type":"ContactPoint",
-    "contactType":"sales",
-    "email":"sales@biznovatech.com",
-    "telephone":"+1 774 337 2572",
-    "areaServed":"IN, AE"
-  }],
-  "address":[{
-    "@type":"PostalAddress",
-    "addressCountry":"IN",
-    "addressLocality":"Bengaluru",
-    "streetAddress":"63, 1st Floor, 16th Main, 8th Cross, BTM 1st Stage, BTM Layout",
-    "postalCode":"560029"
-  },{
-    "@type":"PostalAddress",
-    "addressCountry":"AE",
-    "addressLocality":"Dubai",
-    "streetAddress":"911, Metropolis Tower, Business Bay"
-  }]
-}
+{"@context":"https://schema.org","@type":"Organization","name":"Biznovatech","url":"https://biznovatech.com","logo":"https://biznovatech.com/icon-256.png","contactPoint":[{"@type":"ContactPoint","contactType":"sales","email":"sales@biznovatech.com","telephone":"+1 774 337 2572","areaServed":"IN, AE"}],"address":[{"@type":"PostalAddress","addressCountry":"IN","addressLocality":"Bengaluru","streetAddress":"63, 1st Floor, 16th Main, 8th Cross, BTM 1st Stage, BTM Layout","postalCode":"560029"},{"@type":"PostalAddress","addressCountry":"AE","addressLocality":"Dubai","streetAddress":"911, Metropolis Tower, Business Bay"}]}
 </script>
 
-<!-- FAQPage JSON-LD (SEO enrichment) -->
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type":"Question","name":"Do I need to change my website?","acceptedAnswer":{"@type":"Answer","text":"No. We wrap or PWA-enable your current site. You keep your CMS & content workflows."}},
-    {"@type":"Question","name":"Is the app on Play Store?","acceptedAnswer":{"@type":"Answer","text":"Distribution can be direct (APK) or via alternative stores. We’ll advise the best route per niche."}},
-    {"@type":"Question","name":"How are push notifications delivered?","acceptedAnswer":{"@type":"Answer","text":"We integrate a push relay compatible with your app layer, segment users, and set schedules you can edit anytime."}},
-    {"@type":"Question","name":"Is this compliant for my niche?","acceptedAnswer":{"@type":"Answer","text":"We provide technology + neutral copy. You are responsible for usage within local laws and platform policies."}},
-    {"@type":"Question","name":"Can I track installs and events?","acceptedAnswer":{"@type":"Answer","text":"Yes. Landing + app expose hooks for client-side or server-side pipelines (CAPI/Pixels, etc.)."}},
-    {"@type":"Question","name":"How fast can we go live?","acceptedAnswer":{"@type":"Answer","text":"Typically days once brand assets and URLs are approved."}}
-  ]
-}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Do I need to change my website?","acceptedAnswer":{"@type":"Answer","text":"No. We convert or wrap your current site into a native Android app. You keep your CMS & content workflows."}},
+{"@type":"Question","name":"Is the app on Play Store?","acceptedAnswer":{"@type":"Answer","text":"Distribution can be direct (APK) or via alternative stores. We’ll advise the best route per niche."}},
+{"@type":"Question","name":"How are push notifications delivered?","acceptedAnswer":{"@type":"Answer","text":"We integrate a push relay compatible with your app layer, segment users, and set schedules you can edit anytime."}},
+{"@type":"Question","name":"Is this compliant for my niche?","acceptedAnswer":{"@type":"Answer","text":"We provide technology + neutral copy. You are responsible for usage within local laws and platform policies."}},
+{"@type":"Question","name":"Can I track installs and events?","acceptedAnswer":{"@type":"Answer","text":"Yes. Landing + app expose hooks for client-side or server-side pipelines (CAPI/Pixels, etc.)."}},
+{"@type":"Question","name":"How fast can we go live?","acceptedAnswer":{"@type":"Answer","text":"Typically days once brand assets and URLs are approved."}}
+]}
 </script>
 
 <script>
@@ -488,9 +451,8 @@
   // Lazy-load any future images if added
   document.querySelectorAll('img').forEach(img => { if(!img.hasAttribute('loading')) img.setAttribute('loading','lazy'); });
 
-  // -------- Lead capture (Demo form + Contact form) ----------
+  // Lead capture
   (function(){
-    // Capture UTMs + current page
     const qs = new URLSearchParams(location.search);
     const ATTR = {
       page: location.href,
@@ -499,65 +461,51 @@
       utm_campaign: qs.get('utm_campaign') || ''
     };
 
-    // DEMO FORM
+    // Normalize URL: if user typed domain without scheme, add https://
+    function normalizeUrl(u){
+      if(!u) return '';
+      const hasScheme = /^https?:\/\//i.test(u);
+      return hasScheme ? u : `https://${u}`;
+    }
+
     const demoForm = document.getElementById('demoForm');
     if (demoForm){
       demoForm.addEventListener('submit', async (e)=>{
         e.preventDefault();
-        const d = Object.fromEntries(new FormData(demoForm).entries());
-        const payload = { ...d, ...ATTR };
+        const data = Object.fromEntries(new FormData(demoForm).entries());
 
-        // Send to Cloudflare Pages Function (/api/demo)
-        let ok = false;
-        try {
-          const r = await fetch('/api/demo', {
-            method: 'POST',
-            headers: {'Content-Type':'application/json'},
-            body: JSON.stringify(payload)
-          });
-          const json = await r.json().catch(()=>({}));
-          ok = r.ok && json.ok;
-        } catch (err) {
-          ok = false;
-        }
+        // Build phone from cc + phone_num
+        const phone = `${data.cc || ''}${(data.phone_num || '').replace(/[^\d]/g,'')}`;
+        // Allow any domain, normalize to https:// for backend convenience
+        const site = normalizeUrl(data.url);
 
-        // Redirect to WhatsApp with details (required)
-        const summary =
-          `Demo Request:%0AName: ${encodeURIComponent(d.name)}%0AURL: ${encodeURIComponent(d.url)}%0AEmail: ${encodeURIComponent(d.email)}%0APhone: ${encodeURIComponent(d.phone)}%0ANotes: ${encodeURIComponent(d.notes||'')}`;
-        window.location.href = `https://wa.me/17743372572?text=${summary}`;
-
-        // Optional: toast if backend failed (commented to avoid double UI)
-        // if (!ok) alert('We could not auto-save your request, but WhatsApp will open now.');
-        demoForm.reset();
-      });
-    }
-
-    // CONTACT FORM (save then WhatsApp short summary)
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm){
-      contactForm.addEventListener('submit', async (e)=>{
-        e.preventDefault();
-        const d = Object.fromEntries(new FormData(contactForm).entries());
-        const mapped = {
-          name: d.cname, email: d.cemail, phone: '', url: '', notes: d.cmsg, ...ATTR
+        const payload = {
+          name: data.name,
+          url: site,
+          email: data.email,
+          phone,
+          notes: data.notes || '',
+          ...ATTR
         };
 
+        // Save to Worker API
         try {
           await fetch('/api/demo', {
             method: 'POST',
             headers: {'Content-Type':'application/json'},
-            body: JSON.stringify(mapped)
+            body: JSON.stringify(payload)
           });
         } catch {}
 
+        // Redirect to WhatsApp with details
         const summary =
-          `Contact:%0AName: ${encodeURIComponent(mapped.name)}%0AEmail: ${encodeURIComponent(mapped.email)}%0AMessage: ${encodeURIComponent(mapped.notes||'')}`;
+          `Demo Request:%0AName: ${encodeURIComponent(payload.name)}%0AURL: ${encodeURIComponent(data.url)}%0AEmail: ${encodeURIComponent(payload.email)}%0APhone: ${encodeURIComponent(phone)}%0ANotes: ${encodeURIComponent(payload.notes)}`;
         window.location.href = `https://wa.me/17743372572?text=${summary}`;
-        contactForm.reset();
+
+        demoForm.reset();
       });
     }
   })();
 </script>
 </body>
 </html>
-
