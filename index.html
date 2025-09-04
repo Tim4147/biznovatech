@@ -1,1 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Biznovatech — App + Landing Page + Push Notifications (White Theme)</title>
+<meta name="description" content="Convert your website into an app, launch a high-converting landing page, and re-engage customers with push notifications. Works for iGaming, Stocks/Trading, Crypto, Lottery/Matka & more." />
+<meta name="theme-color" content="#ffffff"/>
+<link rel="canonical" href="https://biznovatech.com/" />
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Biznovatech — App + Landing + Push" />
+<meta property="og:description" content="Own your audience. App + Landing + Push Notifications. No WhatsApp API needed." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://biznovatech.com/og-image.png" />
+<meta property="og:url" content="https://biznovatech.com/" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Biznovatech — App + Landing + Push" />
+<meta name="twitter:description" content="Convert your site to an app, add a high-converting landing page, and re-engage customers with push notifications." />
+<meta name="twitter:image" content="https://biznovatech.com/og-image.png" />
+
+<style>
+  :root{
+    /* White + Blue/Yellow accents */
+    --bg:#ffffff;
+    --paper:#f5f7fb;
+    --ink:#0b1c3d;
+    --muted:#5a6a85;
+    --line:#e5e9f2;
+    --brand:#0d6efd;
+    --brand-2:#ffcc00;
+    --ok:#16a34a;
+    --danger:#ef4444;
+    --shadow:0 12px 36px rgba(11,28,61,.08);
+    --ring:0 0 0 3px rgba(13,110,253,.18);
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html:focus-within{scroll-behavior:smooth}
+  body{
+    margin:0;padding:0;background:var(--bg);color:var(--ink);
+    font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  }
+  a{color:var(--brand);text-decoration:none}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{outline:none; box-shadow:var(--ring)}
+  img{max-width:100%;display:block;height:auto}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+  .btn{display:inline-block;padding:14px 18px;border-radius:12px;font-weight:800;border:1px solid var(--brand);background:var(--brand);color:#fff}
+  .btn.ghost{background:#fff;color:var(--brand)}
+  .btn.alt{background:var(--brand-2);border-color:var(--brand-2);color:#111}
+  .chip{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);font-size:12px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+  .grid{display:grid;gap:18px}
+  .g-2{grid-template-columns:repeat(2,1fr)}
+  .g-3{grid-template-columns:repeat(3,1fr)}
+  .g-4{grid-template-columns:repeat(4,1fr)}
+  h1{font-size:clamp(28px,4.2vw,42px);line-height:1.12;margin:12px 0}
+  h2{font-size:clamp(22px,3.2vw,30px);margin:0 0 10px}
+  h3{font-size:clamp(18px,2.4vw,22px);margin:0 0 6px}
+  p.lead{font-size:clamp(16px,2.3vw,18px);color:var(--muted)}
+  .muted{color:var(--muted)}
+  .section{padding:36px 0}
+  .section.alt{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .hero{padding:40px 0}
+  .hero .grid{grid-template-columns:1.15fr .85fr}
+  .badge{display:inline-block;padding:6px 10px;border-radius:8px;background:var(--brand-2);font-weight:800;color:#111}
+  .list{display:grid;gap:8px;margin-top:8px}
+  .li{display:flex;gap:10px;align-items:flex-start}
+  .li i{width:10px;height:10px;border-radius:50%;margin-top:8px;background:var(--brand)}
+  .note{font-size:12px;color:var(--muted)}
+  .nav{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 0}
+  .brand{display:flex;align-items:center;gap:10px}
+  .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--brand-2),#ffe680 60%);display:grid;place-items:center;font-weight:900;color:#111}
+  .nav-links{display:flex;gap:10px;flex-wrap:wrap}
+  .link{padding:10px 12px;border-radius:10px;border:1px solid var(--line);color:var(--ink)}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+  .step{display:flex;gap:12px;align-items:flex-start}
+  .num{width:34px;height:34px;border-radius:10px;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:900}
+  .table{width:100%;border-collapse:collapse;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .table th,.table td{border-bottom:1px solid var(--line);padding:12px;text-align:left}
+  .table th{background:#f9fbff}
+  /* Reviews carousel (pure CSS) */
+  .reviews{position:relative;overflow:hidden}
+  .slides{display:flex;gap:18px;transition:transform .5s ease;will-change:transform}
+  input[name="r"]{display:none}
+  .dots{display:flex;gap:8px;justify-content:center;margin-top:10px}
+  .dot{width:10px;height:10px;border-radius:50%;background:#cbd5e1;cursor:pointer}
+  #r1:checked ~ .slides{transform:translateX(0)}
+  #r2:checked ~ .slides{transform:translateX(-100%)}
+  #r3:checked ~ .slides{transform:translateX(-200%)}
+  #r1:checked ~ .dots label[for="r1"]{background:var(--brand)}
+  #r2:checked ~ .dots label[for="r2"]{background:var(--brand)}
+  #r3:checked ~ .dots label[for="r3"]{background:var(--brand)}
+  /* Footer & sticky contact */
+  footer{border-top:1px solid var(--line);margin-top:36px;background:#fff}
+  .foot{display:grid;gap:18px;grid-template-columns:2fr 1fr 1fr 1.2fr;padding:22px 0}
+  .foot h4{margin:0 0 10px}
+  .contact li{margin:4px 0}
+  .sticky{position:fixed;bottom:0;left:0;right:0;background:#ffffffee;backdrop-filter:saturate(140%) blur(8px);border-top:1px solid var(--line);display:flex;justify-content:center;z-index:60}
+  .sticky .bar{max-width:1200px;width:100%;padding:8px 20px;display:flex;gap:10px}
+  .sticky .bar a{flex:1;text-align:center;border-radius:10px;padding:12px 14px;font-weight:800}
+  .wa{background:#25D366;color:#111;border:1px solid #22c55e}
+  .tg{background:#229ED9;color:#111;border:1px solid #38bdf8}
+  .enq{background:var(--brand-2);color:#111;border:1px solid #f1c40f}
+  /* Forms */
+  .input, textarea{width:100%;background:#fff;border:1px solid var(--line);color:var(--ink);
+    border-radius:12px;padding:12px;outline:none}
+  .input:focus, textarea:focus{box-shadow:var(--ring);border-color:#c6d8ff}
+  /* Accessibility: reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    .slides{transition:none}
+    html:focus-within{scroll-behavior:auto}
+  }
+  /* Mobile responsiveness */
+  @media (max-width: 980px){
+    .hero .grid, .g-4, .g-3, .g-2, .foot{grid-template-columns:1fr}
+    .nav .link{display:none}
+    body{padding-bottom:84px} /* ensure sticky bar doesn't cover content */
+    .card{padding:18px}
+    .nav-inner{padding:8px 0}
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="visually-hidden" style="position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
+
+<!-- NAV -->
+<header class="nav" role="banner">
+  <div class="wrap nav-inner" aria-label="Top Navigation">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">B</div>
+      <div>
+        <div style="font-weight:900;letter-spacing:.2px">Biznovatech</div>
+        <div class="muted" style="font-size:12px">App • Landing Page • Push</div>
+      </div>
+    </div>
+    <nav class="nav-links" role="navigation" aria-label="Primary">
+      <a class="link" href="#solution">Solution</a>
+      <a class="link" href="#examples">Examples</a>
+      <a class="link" href="#case-studies">Case Studies</a>
+      <a class="link" href="#pricing">Pricing</a>
+      <a class="link" href="#faq">FAQ</a>
+      <a class="btn ghost" href="#contact">Talk to Sales</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap grid">
+      <div class="card">
+        <span class="badge">No WhatsApp API? No problem.</span>
+        <h1 id="hero-title">Own your audience with <span style="color:var(--brand)">App + Landing Page + Push Notifications</span>.</h1>
+        <p class="lead">We convert your existing website into a fast, installable app, build a high-converting landing page, and set up push notifications to bring customers back—perfect for <strong>iGaming</strong>, <strong>Stocks/Trading</strong>, <strong>Crypto</strong>, <strong>Lottery/Matka</strong>, <strong>Adult</strong>, <strong>Escorts</strong> or <em>any niche</em>.</p>
+        <ul class="list" aria-label="Key benefits">
+          <li class="li"><i aria-hidden="true"></i><div><strong>Your App</strong> — PWA or native wrapper (icon, splash, deep links, mirrors).</div></li>
+          <li class="li"><i aria-hidden="true"></i><div><strong>Landing Page</strong> — Install-first design, ad-ready, blazing fast.</div></li>
+          <li class="li"><i aria-hidden="true"></i><div><strong>Push Setup</strong> — Daily/segment pushes with a 90-day copy bank.</div></li>
+          <li class="li"><i aria-hidden="true"></i><div><strong>Neutral, value-led messaging</strong> tuned for high-risk verticals.</div></li>
+        </ul>
+        <div class="hero-cta">
+          <a class="btn" href="#contact" aria-label="Get my demo">Get My Demo →</a>
+          <a class="btn alt" href="https://wa.me/17743372572" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp</a>
+          <a class="btn ghost" href="https://t.me/mark77771111" target="_blank" rel="noopener" aria-label="Chat on Telegram">Telegram</a>
+        </div>
+        <p class="note">“Increase your business 10×” by compounding retention with installs + push.</p>
+      </div>
+
+      <div class="card" id="solution">
+        <h2>Quick Demo Request</h2>
+        <p class="muted">Share your website; get a live preview of your App + Landing + Push.</p>
+        <form id="demoForm" style="margin-top:10px" aria-label="Demo request form">
+          <label>Full Name<br/><input class="input" type="text" name="name" placeholder="Your Name" autocomplete="name" required></label><br/><br/>
+          <label>Business / Website URL<br/><input class="input" type="url" name="url" placeholder="https://yourdomain.com" inputmode="url" required></label><br/><br/>
+          <label>Email<br/><input class="input" type="email" name="email" placeholder="you@company.com" autocomplete="email" required></label><br/><br/>
+          <label>Phone / WhatsApp<br/><input class="input" type="tel" name="phone" placeholder="+91…" inputmode="tel" required></label><br/><br/>
+          <label>Notes (optional)<br/><textarea class="input" name="notes" rows="3" placeholder="Industry, KPIs, timelines…"></textarea></label><br/><br/>
+          <button class="btn" type="submit">Request Demo</button>
+          <p class="note" style="margin-top:8px">Prefer chat? <a href="https://wa.me/17743372572" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://t.me/mark77771111" target="_blank" rel="noopener">Telegram</a> · <a href="mailto:sales@biznovatech.com">Email</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE BLOCKS -->
+  <section class="section alt" aria-labelledby="value-title">
+    <div class="wrap g-3 grid">
+      <div class="card">
+        <h2 id="value-title" style="margin:0 0 8px">Why “Own” the Channel?</h2>
+        <p class="muted">Rented channels can get flagged or banned. Your app + push build a direct, permission-based line to customers—no gatekeepers.</p>
+        <ul class="list">
+          <li class="li"><i aria-hidden="true"></i><div>Higher retention vs only-ads.</div></li>
+          <li class="li"><i aria-hidden="true"></i><div>Lower re-activation cost.</div></li>
+          <li class="li"><i aria-hidden="true"></i><div>Faster product announcements.</div></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>What You Get</h3>
+        <ul class="list">
+          <li class="li"><i aria-hidden="true"></i><div>Installable Android App (PWA / Wrapper)</div></li>
+          <li class="li"><i aria-hidden="true"></i><div>High-converting Landing Page (HTML/CSS)</div></li>
+          <li class="li"><i aria-hidden="true"></i><div>Push Setup + 90-day Copy Bank</div></li>
+          <li class="li"><i aria-hidden="true"></i><div>Docs for mirrors & tracking</div></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Supported Niches</h3>
+        <div class="list" role="list">
+          <span class="chip">iGaming</span> <span class="chip">Stocks/Trading</span> <span class="chip">Crypto</span>
+          <span class="chip">Lottery/Matka</span> <span class="chip">Adult</span> <span class="chip">Escorts</span>
+        </div>
+        <p class="note" style="margin-top:8px">We provide technology & neutral copy. You are responsible for local compliance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXAMPLES -->
+  <section id="examples" class="section" aria-labelledby="examples-title">
+    <div class="wrap">
+      <h2 id="examples-title">Examples & Use-Cases</h2>
+      <p class="muted">Here are example flows that repeatedly drive installs and returns (adjusted per niche):</p>
+      <div class="grid g-3" style="margin-top:12px">
+        <div class="card">
+          <h3>iGaming</h3>
+          <ul class="list">
+            <li class="li"><i aria-hidden="true"></i><div>Install page with “Tournament Tonight” CTA.</div></li>
+            <li class="li"><i aria-hidden="true"></i><div>Push cadence: Day 1 onboarding, Day 3 tips, Day 7 leaderboard.</div></li>
+            <li class="li"><i aria-hidden="true"></i><div>Mirrors & fallback links baked in.</div></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Stocks/Trading</h3>
+          <ul class="list">
+            <li class="li"><i aria-hidden="true"></i><div>Install page with watchlist & demo preview.</div></li>
+            <li class="li"><i aria-hidden="true"></i><div>Push: market-open/close nudges, education drip (risk-aware).</div></li>
+            <li class="li"><i aria-hidden="true"></i><div>KYC progress reminders (neutral copy).</div></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Lottery/Matka</h3>
+          <ul class="list">
+            <li class="li"><i aria-hidden="true"></i><div>Install page highlights results & charts.</div></li>
+            <li class="li"><i aria-hidden="true"></i><div>Push: result alerts, responsible play tips.</div></li>
+            <li class="li"><i aria-hidden="true"></i><div>FAQ landing for quick trust.</div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section id="case-studies" class="section alt" aria-labelledby="cases-title">
+    <div class="wrap">
+      <h2 id="cases-title">Case Studies (illustrative)</h2>
+      <p class="muted">Numbers below are realistic scenarios to show impact; your mileage varies by niche, traffic quality, and product funnels.</p>
+
+      <div class="grid g-3" style="margin-top:12px">
+        <div class="card" role="figure" aria-label="iGaming case study">
+          <h3>Case A — iGaming Launch</h3>
+          <table class="table">
+            <tr><th>Metric</th><th>Before</th><th>After</th></tr>
+            <tr><td>Install Rate</td><td>1.2%</td><td>3.8%</td></tr>
+            <tr><td>Day-7 Return</td><td>11%</td><td>24%</td></tr>
+            <tr><td>CPA (Install)</td><td>₹220</td><td>₹120</td></tr>
+          </table>
+          <p class="note">Landing above-the-fold + push onboarding improved retention.</p>
+        </div>
+        <div class="card" role="figure" aria-label="Trading education funnel case study">
+          <h3>Case B — Trading Edu Funnel</h3>
+          <table class="table">
+            <tr><th>Metric</th><th>Before</th><th>After</th></tr>
+            <tr><td>Install Rate</td><td>0.9%</td><td>2.5%</td></tr>
+            <tr><td>Course Completion</td><td>18%</td><td>35%</td></tr>
+            <tr><td>Qualified Leads</td><td>—</td><td>+64%</td></tr>
+          </table>
+          <p class="note">Neutral education drip reduced drop-offs and raised quality.</p>
+        </div>
+        <div class="card" role="figure" aria-label="Lottery/Matka case study">
+          <h3>Case C — Lottery/Matka</h3>
+          <table class="table">
+            <tr><th>Metric</th><th>Before</th><th>After</th></tr>
+            <tr><td>Install Rate</td><td>1.0%</td><td>3.1%</td></tr>
+            <tr><td>Dormant Reactivation</td><td>—</td><td>+42%</td></tr>
+            <tr><td>Support Tickets</td><td>100%</td><td>−28%</td></tr>
+          </table>
+          <p class="note">Results alerts + FAQ landing lowered friction & support load.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section" aria-labelledby="faq-title">
+    <div class="wrap">
+      <h2 id="faq-title">Frequently Asked Questions</h2>
+      <div class="grid g-2" style="margin-top:12px">
+        <div class="card">
+          <h3>Do I need to change my website?</h3>
+          <p>No. We wrap or PWA-enable your current site. You keep your CMS & content workflows.</p>
+        </div>
+        <div class="card">
+          <h3>Is the app on Play Store?</h3>
+          <p>Distribution can be direct (APK) or via alternative stores. We’ll advise the best route per niche.</p>
+        </div>
+        <div class="card">
+          <h3>How are push notifications delivered?</h3>
+          <p>We integrate a push relay compatible with your app layer, segment users, and set schedules you can edit anytime.</p>
+        </div>
+        <div class="card">
+          <h3>Is this compliant for my niche?</h3>
+          <p>We provide technology + neutral copy. You are responsible for usage within local laws and platform policies.</p>
+        </div>
+        <div class="card">
+          <h3>Can I track installs and events?</h3>
+          <p>Yes. Landing + app expose hooks for client-side or server-side pipelines (CAPI/Pixels, etc.).</p>
+        </div>
+        <div class="card">
+          <h3>How fast can we go live?</h3>
+          <p>Typically days once brand assets and URLs are approved. We’ve optimized for speed without sacrificing quality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="section alt" aria-labelledby="pricing-title">
+    <div class="wrap">
+      <h2 id="pricing-title">Pricing</h2>
+      <p class="muted">Every niche has unique policy, distribution, and messaging needs. We tailor implementation, push cadence, and mirror strategy accordingly.</p>
+      <div class="card" style="margin-top:12px">
+        <h3 style="margin-bottom:8px">Discuss with our team for pricing</h3>
+        <p class="muted">Share your website, traffic mix (paid/organic), markets, and timelines. We’ll scope deliverables and provide a quote.</p>
+        <div class="hero-cta" style="margin-top:8px">
+          <a class="btn" href="#contact">Talk to Sales</a>
+          <a class="btn alt" href="https://wa.me/17743372572" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn ghost" href="https://t.me/mark77771111" target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 id="contact-title">Contact & Offices</h2>
+      <div class="grid g-2" style="margin-top:12px">
+        <div class="card">
+          <form id="contactForm" aria-label="Contact form">
+            <label>Full Name<br/><input class="input" name="cname" autocomplete="name" required placeholder="Your Name"/></label><br/><br/>
+            <label>Email<br/><input class="input" type="email" name="cemail" autocomplete="email" required placeholder="you@company.com"/></label><br/><br/>
+            <label>Message<br/><textarea class="input" rows="4" name="cmsg" placeholder="Tell us about your goals"></textarea></label><br/><br/>
+            <button class="btn" type="submit">Send Message</button>
+            <p class="note" style="margin-top:8px">Or reach out directly: 
+              <a href="mailto:sales@biznovatech.com">sales@biznovatech.com</a> · 
+              <a href="https://wa.me/17743372572" target="_blank" rel="noopener">WhatsApp</a> · 
+              <a href="https://t.me/mark77771111" target="_blank" rel="noopener">Telegram</a>
+            </p>
+          </form>
+        </div>
+        <div class="card">
+          <h3>India (Bengaluru)</h3>
+          <p>63, 1st Floor, 16th Main, 8th Cross, BTM 1st Stage,<br/>BTM Layout, Bengaluru, Karnataka 560029</p>
+          <p><strong>Phone/WhatsApp:</strong> +1 774 337 2572</p>
+          <p><a class="chip" href="https://maps.google.com/?q=BTM%201st%20Stage%2C%20Bengaluru%20560029" target="_blank" rel="noopener">Open in Maps</a></p>
+          <hr style="border:none;border-top:1px solid var(--line);margin:14px 0" aria-hidden="true">
+          <h3>Dubai (U.A.E.)</h3>
+          <p>911, Metropolis Tower, Business Bay, Dubai</p>
+          <p><strong>Email:</strong> <a href="mailto:sales@biznovatech.com">sales@biznovatech.com</a></p>
+          <p><a class="chip" href="https://maps.google.com/?q=Metropolis%20Tower%20Business%20Bay%20Dubai" target="_blank" rel="noopener">Open in Maps</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="wrap foot">
+    <div>
+      <div class="brand" style="margin-bottom:8px;display:flex;align-items:center;gap:10px">
+        <div class="logo" aria-hidden="true">B</div>
+        <div>
+          <div style="font-weight:900">Biznovatech</div>
+          <div class="muted" style="font-size:12px">Own your audience.</div>
+        </div>
+      </div>
+      <p class="muted">App + Landing Page + Push Notifications for iGaming, Trading, Crypto, Lottery/Matka & more.</p>
+      <div class="list" style="margin-top:8px">
+        <span class="chip">PWA/Wrapper App</span><span class="chip">Install-first LP</span><span class="chip">Push Cadence</span><span class="chip">Mirrors</span>
+      </div>
+    </div>
+    <nav aria-label="Footer">
+      <h4>Quick Links</h4>
+      <div class="list" role="list">
+        <a href="#solution">Solution</a>
+        <a href="#examples">Examples</a>
+        <a href="#case-studies">Case Studies</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </nav>
+    <div>
+      <h4>Contact</h4>
+      <ul class="contact" style="list-style:none;padding:0;margin:0">
+        <li><a href="mailto:sales@biznovatech.com">sales@biznovatech.com</a></li>
+        <li><a href="https://wa.me/17743372572" target="_blank" rel="noopener">WhatsApp: +1 774 337 2572</a></li>
+        <li><a href="https://t.me/mark77771111" target="_blank" rel="noopener">Telegram: @mark77771111</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Offices</h4>
+      <p><strong>India</strong><br/>63, 1st Floor, 16th Main, 8th Cross, BTM 1st Stage, BTM Layout, Bengaluru, Karnataka 560029</p>
+      <p><strong>Dubai</strong><br/>911, Metropolis Tower, Business Bay, Dubai (U.A.E.)</p>
+    </div>
+  </div>
+  <div class="wrap" style="padding:0 20px 20px;color:var(--muted);font-size:12px">
+    © <span id="year"></span> Biznovatech. All rights reserved.
+  </div>
+</footer>
+
+<!-- STICKY CONTACT BAR -->
+<div class="sticky" aria-label="Quick contact">
+  <div class="bar">
+    <a class="wa" href="https://wa.me/17743372572" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="tg" href="https://t.me/mark77771111" target="_blank" rel="noopener">Telegram</a>
+    <a class="enq" href="mailto:sales@biznovatech.com">Enquiry</a>
+  </div>
+</div>
+
+<!-- Organization JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"Biznovatech",
+  "url":"https://biznovatech.com",
+  "logo":"https://biznovatech.com/icon-256.png",
+  "contactPoint":[{
+    "@type":"ContactPoint",
+    "contactType":"sales",
+    "email":"sales@biznovatech.com",
+    "telephone":"+1 774 337 2572",
+    "areaServed":"IN, AE"
+  }],
+  "address":[{
+    "@type":"PostalAddress",
+    "addressCountry":"IN",
+    "addressLocality":"Bengaluru",
+    "streetAddress":"63, 1st Floor, 16th Main, 8th Cross, BTM 1st Stage, BTM Layout",
+    "postalCode":"560029"
+  },{
+    "@type":"PostalAddress",
+    "addressCountry":"AE",
+    "addressLocality":"Dubai",
+    "streetAddress":"911, Metropolis Tower, Business Bay"
+  }]
+}
+</script>
+
+<!-- FAQPage JSON-LD (SEO enrichment) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Do I need to change my website?","acceptedAnswer":{"@type":"Answer","text":"No. We wrap or PWA-enable your current site. You keep your CMS & content workflows."}},
+    {"@type":"Question","name":"Is the app on Play Store?","acceptedAnswer":{"@type":"Answer","text":"Distribution can be direct (APK) or via alternative stores. We’ll advise the best route per niche."}},
+    {"@type":"Question","name":"How are push notifications delivered?","acceptedAnswer":{"@type":"Answer","text":"We integrate a push relay compatible with your app layer, segment users, and set schedules you can edit anytime."}},
+    {"@type":"Question","name":"Is this compliant for my niche?","acceptedAnswer":{"@type":"Answer","text":"We provide technology + neutral copy. You are responsible for usage within local laws and platform policies."}},
+    {"@type":"Question","name":"Can I track installs and events?","acceptedAnswer":{"@type":"Answer","text":"Yes. Landing + app expose hooks for client-side or server-side pipelines (CAPI/Pixels, etc.)."}},
+    {"@type":"Question","name":"How fast can we go live?","acceptedAnswer":{"@type":"Answer","text":"Typically days once brand assets and URLs are approved."}}
+  ]
+}
+</script>
+
+<script>
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Lazy-load any future images if added
+  document.querySelectorAll('img').forEach(img => { if(!img.hasAttribute('loading')) img.setAttribute('loading','lazy'); });
+
+  // -------- Lead capture (Demo form + Contact form) ----------
+  (function(){
+    // Capture UTMs + current page
+    const qs = new URLSearchParams(location.search);
+    const ATTR = {
+      page: location.href,
+      utm_source: qs.get('utm_source') || '',
+      utm_medium: qs.get('utm_medium') || '',
+      utm_campaign: qs.get('utm_campaign') || ''
+    };
+
+    // DEMO FORM
+    const demoForm = document.getElementById('demoForm');
+    if (demoForm){
+      demoForm.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        const d = Object.fromEntries(new FormData(demoForm).entries());
+        const payload = { ...d, ...ATTR };
+
+        // Send to Cloudflare Pages Function (/api/demo)
+        let ok = false;
+        try {
+          const r = await fetch('/api/demo', {
+            method: 'POST',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify(payload)
+          });
+          const json = await r.json().catch(()=>({}));
+          ok = r.ok && json.ok;
+        } catch (err) {
+          ok = false;
+        }
+
+        // Redirect to WhatsApp with details (required)
+        const summary =
+          `Demo Request:%0AName: ${encodeURIComponent(d.name)}%0AURL: ${encodeURIComponent(d.url)}%0AEmail: ${encodeURIComponent(d.email)}%0APhone: ${encodeURIComponent(d.phone)}%0ANotes: ${encodeURIComponent(d.notes||'')}`;
+        window.location.href = `https://wa.me/17743372572?text=${summary}`;
+
+        // Optional: toast if backend failed (commented to avoid double UI)
+        // if (!ok) alert('We could not auto-save your request, but WhatsApp will open now.');
+        demoForm.reset();
+      });
+    }
+
+    // CONTACT FORM (save then WhatsApp short summary)
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm){
+      contactForm.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        const d = Object.fromEntries(new FormData(contactForm).entries());
+        const mapped = {
+          name: d.cname, email: d.cemail, phone: '', url: '', notes: d.cmsg, ...ATTR
+        };
+
+        try {
+          await fetch('/api/demo', {
+            method: 'POST',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify(mapped)
+          });
+        } catch {}
+
+        const summary =
+          `Contact:%0AName: ${encodeURIComponent(mapped.name)}%0AEmail: ${encodeURIComponent(mapped.email)}%0AMessage: ${encodeURIComponent(mapped.notes||'')}`;
+        window.location.href = `https://wa.me/17743372572?text=${summary}`;
+        contactForm.reset();
+      });
+    }
+  })();
+</script>
+</body>
+</html>
 
