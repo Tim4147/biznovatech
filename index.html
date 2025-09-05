@@ -9,6 +9,10 @@
 <link rel="canonical" href="https://biznovatech.com/" />
 <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
 
+<!-- Favicons -->
+<link rel="icon" href="https://i.ibb.co/dJ6pxS8V/Biznovatech-Logo-more-width.png" sizes="any">
+<link rel="apple-touch-icon" href="https://i.ibb.co/dJ6pxS8V/Biznovatech-Logo-more-width.png">
+
 <!-- Open Graph -->
 <meta property="og:title" content="Biznovatech — App + Landing + Push" />
 <meta property="og:description" content="Own your audience. Native Android App + Landing + Push Notifications. No WhatsApp API needed." />
@@ -59,13 +63,17 @@
   .li{display:flex;gap:10px;align-items:flex-start}
   .li i{width:10px;height:10px;border-radius:50%;margin-top:8px;background:var(--brand)}
   .note{font-size:12px;color:var(--muted)}
+
+  /* NAV */
   .nav{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 0}
-  .brand{display:flex;align-items:center;gap:10px}
-  .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--brand-2),#ffe680 60%);display:grid;place-items:center;font-weight:900;color:#111}
-  .nav-links{display:flex;gap:10px;flex-wrap:wrap}
+  .nav-inner{
+    display:flex;flex-direction:column;align-items:center;gap:10px;padding:10px 0
+  }
+  .brand-logo{height:64px;width:auto}
+  .nav-links{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
   .link{padding:10px 12px;border-radius:10px;border:1px solid var(--line);color:var(--ink)}
   .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+
   .table{width:100%;border-collapse:collapse;border:1px solid var(--line);border-radius:12px;overflow:hidden}
   .table th,.table td{border-bottom:1px solid var(--line);padding:12px;text-align:left}
   .table th{background:#f9fbff}
@@ -81,81 +89,57 @@
   .input, textarea, select{width:100%;background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:12px;padding:12px;outline:none}
   .row{display:flex;gap:10px}
   .row .w-32{flex:0 0 32%} .row .w-68{flex:1}
-  @media (prefers-reduced-motion: reduce){ .slides{transition:none} html:focus-within{scroll-behavior:auto} }
+
+  /* Mobile polish */
+  :root { -webkit-text-size-adjust: 100%; }
+  .table{ display:block; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .table th,.table td{ white-space:nowrap; }
+  .foot .list a{ display:inline-block; margin:4px 0; }
+  .contact li, .contact a{ line-height:1.4; }
+  .chip{ padding:8px 10px; font-size:13px; }
+  .nav .btn.ghost{ padding:10px 12px; border-radius:10px; }
+  .badge{ display:inline-block; line-height:1.2; padding:8px 10px; }
+
   @media (max-width: 980px){
     .hero .grid,.g-4,.g-3,.g-2,.foot{grid-template-columns:1fr}
-    .nav .link{display:none}
     body{padding-bottom:84px}
     .card{padding:18px}
     .nav-inner{padding:8px 0}
     .row{flex-direction:column}
   }
-  /* --- Mobile polish (drop-in) --- */
-:root { -webkit-text-size-adjust: 100%; }
-
-/* Make tables scroll instead of breaking layout */
-.table{ display:block; overflow-x:auto; -webkit-overflow-scrolling:touch; }
-.table th,.table td{ white-space:nowrap; }
-
-/* Footer quick-links look like neat rows on mobile */
-.foot .list a{ display:inline-block; margin:4px 0; }
-
-/* Slightly tighter contact list */
-.contact li, .contact a{ line-height:1.4; }
-
-/* Chips readable but compact */
-.chip{ padding:8px 10px; font-size:13px; }
-
-/* Smaller ghost button in the nav on phones */
-.nav .btn.ghost{ padding:10px 12px; border-radius:10px; }
-
-/* Badge doesn’t overgrow */
-.badge{ display:inline-block; line-height:1.2; padding:8px 10px; }
-
-/* General card/wrap tightening on small screens */
-@media (max-width: 768px){
-  .wrap{ padding:0 14px; }
-  .card{ padding:16px; }
-  .brand .logo{ width:32px; height:32px; }
-  .hero .grid{ grid-template-columns:1fr; gap:14px; }
-  .hero-cta{ gap:10px; }
-  .hero-cta .btn{ flex:1; } /* full-width CTAs */
-  h1{ font-size:clamp(24px,6.2vw,32px); line-height:1.15; margin:10px 0; }
-  h2{ font-size:clamp(18px,4.8vw,24px); }
-  p.lead{ font-size:15px; }
-  /* phone input row sizing */
-  .row{ flex-direction:row; gap:8px; }
-  .row .w-32{ flex:0 0 40%; }
-  .row .w-68{ flex:1; }
-  /* footer stacks cleanly */
-  .foot{ grid-template-columns:1fr; }
-  /* sticky bar a touch tighter */
-  .sticky .bar{ gap:8px; }
-  .sticky .bar a{ padding:12px 10px; }
-}
-
-/* Very small devices */
-@media (max-width: 400px){
-  h1{ font-size:22px; }
-  .btn{ padding:12px 14px; }
-  .badge{ font-size:12px; padding:6px 8px; }
-}
-
+  @media (max-width: 768px){
+    .wrap{ padding:0 14px; }
+    .card{ padding:16px; }
+    .brand-logo{ height:52px; }
+    .hero .grid{ grid-template-columns:1fr; gap:14px; }
+    .hero-cta{ gap:10px; }
+    .hero-cta .btn{ flex:1; }
+    h1{ font-size:clamp(24px,6.2vw,32px); line-height:1.15; margin:10px 0; }
+    h2{ font-size:clamp(18px,4.8vw,24px); }
+    p.lead{ font-size:15px; }
+    .row{ flex-direction:row; gap:8px; }
+    .row .w-32{ flex:0 0 40%; }
+    .row .w-68{ flex:1; }
+    .foot{ grid-template-columns:1fr; }
+    .sticky .bar{ gap:8px; }
+    .sticky .bar a{ padding:12px 10px; }
+  }
+  @media (max-width: 400px){
+    h1{ font-size:22px; }
+    .btn{ padding:12px 14px; }
+    .badge{ font-size:12px; padding:6px 8px; }
+    .brand-logo{ height:46px; }
+  }
 </style>
 </head>
 <body>
 
 <a href="#main" class="visually-hidden" style="position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
 
+<!-- NAV: centered big logo, links beneath -->
 <header class="nav" role="banner">
   <div class="wrap nav-inner" aria-label="Top Navigation">
-    <div class="brand">
-      <div class="logo" aria-hidden="true">B</div>
-      <div>
-        <div style="font-weight:900;letter-spacing:.2px">Biznovatech</div>
-        <div class="muted" style="font-size:12px">Native Android App • Landing Page • Push</div>
-      </div>
-    </div>
+    <img class="brand-logo" src="https://i.ibb.co/dJ6pxS8V/Biznovatech-Logo-more-width.png" alt="Biznovatech Logo">
     <nav class="nav-links" role="navigation" aria-label="Primary">
       <a class="link" href="#solution">Solution</a>
       <a class="link" href="#examples">Examples</a>
@@ -225,6 +209,7 @@
     </div>
   </section>
 
+  <!-- (rest of the sections unchanged) -->
   <section class="section alt" aria-labelledby="value-title">
     <div class="wrap g-3 grid">
       <div class="card">
@@ -406,13 +391,6 @@
 <footer role="contentinfo">
   <div class="wrap foot">
     <div>
-      <div class="brand" style="margin-bottom:8px;display:flex;align-items:center;gap:10px">
-        <div class="logo" aria-hidden="true">B</div>
-        <div>
-          <div style="font-weight:900">Biznovatech</div>
-          <div class="muted" style="font-size:12px">Own your audience.</div>
-        </div>
-      </div>
       <p class="muted">Native Android App + Landing Page + Push Notifications for iGaming, Trading, Crypto, Lottery/Matka & more.</p>
       <div class="list" style="margin-top:8px">
         <span class="chip">Native Android App</span><span class="chip">Install-first LP</span><span class="chip">Push Cadence</span><span class="chip">Mirrors</span>
@@ -498,7 +476,6 @@
       demoForm.addEventListener('submit', async (e)=>{
         e.preventDefault();
 
-        // Collect + trim
         const raw = Object.fromEntries(new FormData(demoForm).entries());
         const data = {
           name: (raw.name||'').trim(),
@@ -509,7 +486,6 @@
           notes: (raw.notes||'').trim(),
         };
 
-        // Validate/normalize country code and number
         const cc = /^\+\d{1,4}$/.test(data.cc) ? data.cc : '';
         const phone = `${cc}${data.phone_num.replace(/[^\d]/g,'')}`;
 
