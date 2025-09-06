@@ -17,11 +17,17 @@
   <meta property="og:image" content="https://i.ibb.co/dJ6pxS8V/Biznovatech-Logo-more-width.png"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Jalwa Game Development Services | Biznovatech"/>
-  <meta name="twitter:description" content="Design, build, and launch Jalwa-style games with secure wallet, KYC, anti-fraud, and growth systems."/>
+ <meta name="twitter:description" content="Design, build, and launch Jalwa-style games with secure wallet, KYC, anti-fraud, and growth systems.">
   <meta name="twitter:image" content="https://i.ibb.co/dJ6pxS8V/Biznovatech-Logo-more-width.png"/>
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- intl-tel-input (full country code picker) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/25.10.5/css/intlTelInput.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/25.10.5/js/intlTelInput.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/25.10.5/js/utils.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
   <style>
     :root{ --purple:#5A2D91; --ink:#0B0F14; --muted:#5b6573 }
     .shadow-soft{ box-shadow:0 8px 30px rgba(16,24,40,.08) }
@@ -58,6 +64,7 @@
         <a href="#process" class="hover:text-[var(--purple)]">Process</a>
         <a href="#stack" class="hover:text-[var(--purple)]">Tech Stack</a>
         <a href="#compliance" class="hover:text-[var(--purple)]">Compliance</a>
+        <a href="#case" class="hover:text-[var(--purple)]">Use-cases</a>
         <a href="#pricing" class="hover:text-[var(--purple)]">Pricing</a>
         <a href="#faq" class="hover:text-[var(--purple)]">FAQ</a>
       </nav>
@@ -135,29 +142,128 @@
     </div>
   </section>
 
-  <!-- Process / Stack / Compliance / Case / Pricing / FAQ ... (unchanged, kept from your version above) -->
-  <!-- ... FOR BREVITY, keep your previously included long-form sections here exactly as-is ... -->
+  <!-- Process -->
+  <section id="process" class="bg-gray-50 border-y border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h2 class="text-3xl md:text-4xl font-bold">How we build your Jalwa game</h2>
+      <ol class="mt-6 grid md:grid-cols-3 gap-6 list-decimal list-inside">
+        <li class="rounded-xl bg-white border border-gray-200 p-6"><strong>Discovery & Scope</strong><br/><span class="text-sm text-[var(--muted)]">Market, mechanics, economy, regions. Success metrics & risks.</span></li>
+        <li class="rounded-xl bg-white border border-gray-200 p-6"><strong>Design & Prototype</strong><br/><span class="text-sm text-[var(--muted)]">Playable prototype; UX, UI kit aligned to your brand.</span></li>
+        <li class="rounded-xl bg-white border border-gray-200 p-6"><strong>Build & Integrate</strong><br/><span class="text-sm text-[var(--muted)]">Core loop, wallet, bonus, risk engine, CRM events.</span></li>
+        <li class="rounded-xl bg-white border border-gray-200 p-6"><strong>Compliance Review</strong><br/><span class="text-sm text-[var(--muted)]">KYC/AML, age-gates, geo-fencing, RG toolkit.</span></li>
+        <li class="rounded-xl bg-white border border-gray-200 p-6"><strong>Deploy & Scale</strong><br/><span class="text-sm text-[var(--muted)]">Blue/green deploy, observability, incident runbooks.</span></li>
+        <li class="rounded-xl bg-white border border-gray-200 p-6"><strong>Growth & Optimization</strong><br/><span class="text-sm text-[var(--muted)]">Cohorts, experiments, LTV lift with content & offers.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section id="stack" class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h2 class="text-3xl md:text-4xl font-bold">Preferred Tech Stack</h2>
+      <div class="grid md:grid-cols-4 gap-6 mt-8">
+        <div class="rounded-xl border border-gray-200 p-6"><strong>Frontend</strong><br/><span class="text-sm text-[var(--muted)]">Next.js, React, Tailwind, PWA, WebView APK</span></div>
+        <div class="rounded-xl border border-gray-200 p-6"><strong>Backend</strong><br/><span class="text-sm text-[var(--muted)]">Node.js/ASP.NET, REST/GraphQL, Workers</span></div>
+        <div class="rounded-xl border border-gray-200 p-6"><strong>Data</strong><br/><span class="text-sm text-[var(--muted)]">Postgres/MSSQL, ClickHouse, Redis/KV</span></div>
+        <div class="rounded-xl border border-gray-200 p-6"><strong>DevOps</strong><br/><span class="text-sm text-[var(--muted)]">CI/CD, Sentry, Prometheus/Grafana</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compliance -->
+  <section id="compliance" class="bg-gray-50 border-y border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h2 class="text-3xl md:text-4xl font-bold">Compliance & Responsible Play</h2>
+      <p class="mt-3 text-[var(--muted)] max-w-3xl">We implement age/ID verification, spend limits, cool-off timers, and geo controls. Your legal team validates jurisdictional licensing before launch. Marketing on Meta/X/Google follows their platform policies.</p>
+      <div class="grid md:grid-cols-3 gap-6 mt-8">
+        <div class="rounded-xl border border-gray-200 p-6 bg-white"><strong>Age-gating & KYC</strong><br/><span class="text-sm text-[var(--muted)]">PAN/Aadhaar/Passport checks, selfie match, watch-lists.</span></div>
+        <div class="rounded-xl border border-gray-200 p-6 bg-white"><strong>Geo & Access</strong><br/><span class="text-sm text-[var(--muted)]">Geo-fencing, risky-state blocks, travel-mode prompts.</span></div>
+        <div class="rounded-xl border border-gray-200 p-6 bg-white"><strong>RG Toolkit</strong><br/><span class="text-sm text-[var(--muted)]">Self-limits, self-exclusion, session reminders, helplines.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies / Use-cases -->
+  <section id="case" class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h2 class="text-3xl md:text-4xl font-bold">Use-cases, Case Studies & Outcomes</h2>
+      <div class="grid md:grid-cols-3 gap-6 mt-8">
+        <article class="rounded-xl border border-gray-200 p-6 bg-white">
+          <h3 class="font-semibold">Rapid MVP</h3>
+          <p class="text-sm text-[var(--muted)] mt-2">Playable prototype in weeks; validate mechanics and economy with closed groups before scale.</p>
+          <ul class="mt-3 text-sm text-[var(--muted)] list-disc list-inside">
+            <li><em>Case A (anonymized):</em> 0 → 12k MAU in 60 days; day-30 retention +3.8pp after streak booster.</li>
+          </ul>
+        </article>
+        <article class="rounded-xl border border-gray-200 p-6 bg-white">
+          <h3 class="font-semibold">Scale & Reliability</h3>
+          <p class="text-sm text-[var(--muted)] mt-2">Multi-region infra, WAF, rate-limits, and monitoring to handle surges safely.</p>
+          <ul class="mt-3 text-sm text-[var(--muted)] list-disc list-inside">
+            <li><em>Case B:</em> 4× peak TPS sustained; 99.95% 30-day uptime with blue/green releases.</li>
+          </ul>
+        </article>
+        <article class="rounded-xl border border-gray-200 p-6 bg-white">
+          <h3 class="font-semibold">Growth Engine</h3>
+          <p class="text-sm text-[var(--muted)] mt-2">Segmented push, in-app offers, cohorts & experiments to lift retention and LTV.</p>
+          <ul class="mt-3 text-sm text-[var(--muted)] list-disc list-inside">
+            <li><em>Case C:</em> Push + offer widgets drove +22% DAU reactivation; CAC payback improved from 93 → 64 days.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="bg-gray-50 border-y border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h2 class="text-3xl md:text-4xl font-bold">Transparent Pricing</h2>
+      <p class="mt-3 text-[var(--muted)] max-w-3xl">Flexible engagement: MVP build-out, full-stack launch, or dedicated squad. All plans include QA, staging, and deployment support.</p>
+      <div class="grid md:grid-cols-3 gap-6 mt-8">
+        <div class="rounded-xl border border-gray-200 p-6 bg-white">
+          <h3 class="font-semibold">MVP</h3>
+          <ul class="mt-3 text-sm text-[var(--muted)] space-y-2 list-disc list-inside">
+            <li>Core game + wallet sandbox</li>
+            <li>Basic KYC + anti-fraud</li>
+            <li>Indicative timeline: 4–6 weeks*</li>
+          </ul>
+          <a href="#ctaform" class="mt-4 inline-block px-4 py-2 rounded-lg bg-[var(--purple)] text-white">Request Quote</a>
+        </div>
+        <div class="rounded-xl border border-gray-200 p-6 bg-white ring-1 ring-[var(--purple)]/30">
+          <h3 class="font-semibold">Scale</h3>
+          <ul class="mt-3 text-sm text-[var(--muted)] space-y-2 list-disc list-inside">
+            <li>Multi-region infra + WAF</li>
+            <li>Bonus engine & CRM hooks</li>
+            <li>Dedicated SRE & analytics</li>
+          </ul>
+          <a href="#ctaform" class="mt-4 inline-block px-4 py-2 rounded-lg bg-[var(--purple)] text-white">Request Quote</a>
+        </div>
+        <div class="rounded-xl border border-gray-200 p-6 bg-white">
+          <h3 class="font-semibold">Enterprise</h3>
+          <ul class="mt-3 text-sm text-[var(--muted)] space-y-2 list-disc list-inside">
+            <li>On-prem / VPC / hybrid</li>
+            <li>Bespoke compliance flows</li>
+            <li>MSA, SLA, 24/7 support</li>
+          </ul>
+          <a href="#ctaform" class="mt-4 inline-block px-4 py-2 rounded-lg bg-[var(--purple)] text-white">Request Quote</a>
+        </div>
+      </div>
+      <p class="mt-4 text-xs text-gray-500">*Timelines depend on scope & approvals.</p>
+    </div>
+  </section>
 
   <!-- Lead Form -->
   <section id="ctaform" class="bg-white">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <h2 class="text-3xl md:text-4xl font-bold">Tell us about your Jalwa.Game build</h2>
 
-      <!-- Form -->
       <form id="leadForm" class="mt-6 grid md:grid-cols-2 gap-4" method="POST" novalidate>
         <input class="w-full rounded-xl bg-white border border-gray-300 px-4 py-3" name="name" placeholder="Your name" required>
         <input class="w-full rounded-xl bg-white border border-gray-300 px-4 py-3" name="email" placeholder="Email" type="email" required>
 
-        <!-- Phone with country code -->
-        <div class="grid grid-cols-[7rem_1fr] gap-2 md:col-span-2">
-          <select name="phone_cc" class="rounded-xl bg-white border border-gray-300 px-3 py-3">
-            <option value="+91" selected>+91 IN</option>
-            <option value="+971">+971 AE</option>
-            <option value="+1">+1 US</option>
-            <option value="+44">+44 UK</option>
-            <option value="+61">+61 AU</option>
-          </select>
-          <input name="phone" class="w-full rounded-xl bg-white border border-gray-300 px-4 py-3" placeholder="Mobile number" inputmode="tel" pattern="[0-9\\s\\-()]{6,20}">
+        <!-- All-country phone (intl-tel-input) -->
+        <div class="md:col-span-2">
+          <input id="phone" name="phone" class="w-full rounded-xl bg-white border border-gray-300 px-4 py-3" placeholder="Mobile number" inputmode="tel">
+          <input type="hidden" id="phone_e164" name="phone_e164">
         </div>
 
         <input class="w-full rounded-xl bg-white border border-gray-300 px-4 py-3 md:col-span-2" name="company" placeholder="Company / Brand" required>
@@ -176,8 +282,65 @@
     </div>
   </section>
 
-  <!-- Footer (keep yours) -->
-  <!-- ... your existing footer and related services blocks ... -->
+  <!-- FAQ -->
+  <section id="faq" class="bg-white border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h2 class="text-3xl md:text-4xl font-bold">Frequently Asked Questions</h2>
+      <div class="mt-8 space-y-6">
+        <details class="rounded-xl border border-gray-200 p-5 bg-white">
+          <summary class="font-semibold cursor-pointer">Can you publish on Jalwa.Game and handle CI/CD?</summary>
+          <p class="mt-3 text-[var(--muted)]">Yes. We set up domain, hosting, SSL, and blue-green deployments. Content & legal approvals remain with your team.</p>
+        </details>
+        <details class="rounded-xl border border-gray-200 p-5 bg-white">
+          <summary class="font-semibold cursor-pointer">Do you help with Meta/Google/X marketing?</summary>
+          <p class="mt-3 text-[var(--muted)]">We implement age-gates, tracking, and compliance prerequisites and coordinate with your licensed entity for ad authorization.</p>
+        </details>
+        <details class="rounded-xl border border-gray-200 p-5 bg-white">
+          <summary class="font-semibold cursor-pointer">What regions can we launch in?</summary>
+          <p class="mt-3 text-[var(--muted)]">We scope launch regions with your legal advisors. Geo-fencing and deposit controls can be enabled per jurisdiction.</p>
+        </details>
+      </div>
+
+      <!-- FAQ Structured Data -->
+      <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"Can you publish on Jalwa.Game and handle CI/CD?","acceptedAnswer":{"@type":"Answer","text":"Yes. We set up domain, hosting, SSL, and blue-green deployments."}},
+        {"@type":"Question","name":"Do you help with Meta/Google/X marketing?","acceptedAnswer":{"@type":"Answer","text":"We implement age-gates, tracking, and compliance prerequisites and coordinate with your licensed entity for ad authorization."}},
+        {"@type":"Question","name":"What regions can we launch in?","acceptedAnswer":{"@type":"Answer","text":"We scope launch regions with your legal advisors. Geo-fencing and deposit controls can be enabled per jurisdiction."}}
+      ]}
+      </script>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <section aria-labelledby="related-services" class="bg-gray-50 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <h2 id="related-services" class="text-2xl md:text-3xl font-bold">Related Biznovatech Services</h2>
+      <ul class="mt-4 grid md:grid-cols-3 gap-4 text-[var(--muted)]">
+        <li><a class="text-[var(--purple)] underline" href="/">Native Android App + Push Notifications</a> — convert your website to a WebView app and re-engage users with segmented push.</li>
+        <li><a class="text-[var(--purple)] underline" href="/sportsbook">Sportsbook Development</a> — odds integrations, markets, and compliance tooling.</li>
+        <li><a class="text-[var(--purple)] underline" href="/casino">Casino Modules</a> — wallet, bonus engine, missions, RG tooling.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid md:grid-cols-3 gap-8 text-sm">
+      <div>
+        <img src="https://i.ibb.co/dJ6pxS8V/Biznovatech-Logo-more-width.png" alt="Biznovatech Logo" class="h-8 mb-2"/>
+        <p class="mt-2 text-[var(--muted)]">Native Android • Landing Pages • Push Notifications</p>
+      </div>
+      <div>
+        <div class="font-semibold">Contact</div>
+        <p class="mt-2 text-[var(--muted)]">India & UAE • support@biznovatech.com • +91-75064-27933</p>
+      </div>
+      <div>
+        <div class="font-semibold">Legal</div>
+        <p class="mt-2 text-[var(--muted)]">You must ensure your product complies with applicable laws and platform policies. We provide technical controls to assist compliance.</p>
+      </div>
+    </div>
+  </footer>
 
   <!-- Floating Contact Bar -->
   <aside class="fixed bottom-4 right-4 z-50 flex flex-col gap-3">
@@ -194,16 +357,15 @@
 
   <!-- Scripts -->
   <script>
-    // Simple lightbox for .lb links
+    // Lightbox for .lb links
     (function(){
       const lb = document.getElementById('lightbox');
       const img = document.getElementById('lightbox-img');
+      if (!lb || !img) return;
       const close = lb.querySelector('.close');
       document.querySelectorAll('a.lb').forEach(a=>{
         a.addEventListener('click', (e)=>{
-          e.preventDefault();
-          img.src = a.href;
-          lb.classList.add('open');
+          e.preventDefault(); img.src = a.href; lb.classList.add('open');
         });
       });
       const hide=()=>lb.classList.remove('open');
@@ -212,14 +374,36 @@
       window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') hide(); });
     })();
 
-    // ===== Lead form wiring =====
+   // Phone input (intl-tel-input) with auto-detect via Worker geo endpoint
+let iti = null;
+(async function(){
+  const phoneInput = document.getElementById('phone');
+  if (!phoneInput || !window.intlTelInput) return;
+
+  let initial = 'in';
+  try {
+    const r = await fetch('https://jalwagameworker.sandhutransport440.workers.dev/geo/country', { cache: 'no-store' });
+    const j = await r.json();
+    if (j && j.country) initial = String(j.country).toLowerCase();
+  } catch {}
+
+  iti = window.intlTelInput(phoneInput, {
+    initialCountry: initial,          // auto-set from Worker, e.g. "in" / "ae" / "us"
+    separateDialCode: true,           // pretty UX with visible dial code
+    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/25.10.5/js/utils.min.js"
+  });
+})();
+    // Lead form wiring
     (function(){
       const WORKER_URL = 'https://jalwagameworker.sandhutransport440.workers.dev';  // absolute for CORS
-      const TELEGRAM_HANDLE = 'mark77771111'; // used for deep-link attempt (optional)
+      const WHATSAPP_BUSINESS_NUMBER = '17743372572'; // digits only (no +)
+
       const form = document.getElementById('leadForm');
       const btn  = document.getElementById('submitBtn');
       const note = document.getElementById('formNote');
       const utmField = document.getElementById('utmField');
+
+      // Capture UTM params
       const params = new URLSearchParams(location.search);
       const utm = Object.fromEntries([...params.entries()].filter(([k])=>k.startsWith('utm_')));
       utmField.value = JSON.stringify(utm);
@@ -231,13 +415,16 @@
         const fd = new FormData(form);
         if (fd.get('website')) { btn.disabled=false; note.textContent=''; return; } // honeypot
 
-        // Combine phone
-        const cc = (fd.get('phone_cc') || '').trim();
-        const ph = (fd.get('phone') || '').trim();
-        const fullPhone = [cc, ph].filter(Boolean).join(' ');
+        // Normalize phone to E.164
+        let phoneE164 = "";
+        if (iti) {
+          const raw = (document.getElementById('phone').value || '').trim();
+          if (raw) phoneE164 = iti.getNumber(); // +<countrycode><number>
+        }
+        document.getElementById('phone_e164').value = phoneE164;
 
         const data = Object.fromEntries(fd.entries());
-        data.phone = fullPhone;
+        data.phone = phoneE164 || data.phone || "";
 
         try {
           const res = await fetch(`${WORKER_URL}/api/leads/jalwa`, {
@@ -251,24 +438,17 @@
           note.textContent = out.message || 'Thanks! We’ll get back to you shortly.';
           form.reset();
 
-          // === Telegram redirect with details ===
-          // Use official share link so the whole message is prefilled and user can choose the chat.
-          // Docs: t.me/share?url=<url>&text=<text> . Works on web/desktop/mobile.  [oai_citation:2‡core.telegram.org](https://core.telegram.org/widgets/share?utm_source=chatgpt.com)
-          const text =
+          // WhatsApp redirect with full details
+          const msg =
 `Jalwa.Game Enquiry
 Name: ${data.name || ''}
 Email: ${data.email || ''}
-Phone: ${fullPhone || ''}
+Phone: ${data.phone || ''}
 Company: ${data.company || ''}
 Details: ${data.details || ''}
 UTM: ${data.utm || ''}`;
-          const share = `https://t.me/share/url?url=${encodeURIComponent(location.href)}&text=${encodeURIComponent(text)}`;
-
-          // Optional: try to open direct chat with your handle (no message attach guaranteed), then fallback to share.
-          const deep = `tg://resolve?domain=${encodeURIComponent(TELEGRAM_HANDLE)}`;
-          // Attempt deep link (app), then fall back to share
-          try { window.location.href = deep; } catch {}
-          setTimeout(()=>{ window.location.href = share; }, 400);
+          const url = `https://wa.me/${WHATSAPP_BUSINESS_NUMBER}?text=${encodeURIComponent(msg)}`;
+          window.location.href = url;
 
         } catch (err) {
           note.textContent = 'Could not submit right now. Please email support@biznovatech.com';
@@ -278,8 +458,5 @@ UTM: ${data.utm || ''}`;
       });
     })();
   </script>
-
-  <!-- (Optional) If you serve the API on a different domain, your Worker must return CORS headers on OPTIONS+POST. Examples in CF docs. -->
-  <!-- CORS in Workers examples: respond to OPTIONS and set Access-Control-Allow-* .  [oai_citation:3‡Cloudflare Docs](https://developers.cloudflare.com/workers/examples/cors-header-proxy/?utm_source=chatgpt.com) [oai_citation:4‡community.cloudflare.com](https://community.cloudflare.com/t/handling-preflight-requests/30260?utm_source=chatgpt.com) -->
 </body>
 </html>
