@@ -17,7 +17,7 @@
   <meta property="og:image" content="https://i.ibb.co/dJ6pxS8V/Biznovatech-Logo-more-width.png"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Jalwa Game Development Services | Biznovatech"/>
- <meta name="twitter:description" content="Design, build, and launch Jalwa-style games with secure wallet, KYC, anti-fraud, and growth systems.">
+  <meta name="twitter:description" content="Design, build, and launch Jalwa-style games with secure wallet, KYC, anti-fraud, and growth systems.">
   <meta name="twitter:image" content="https://i.ibb.co/dJ6pxS8V/Biznovatech-Logo-more-width.png"/>
 
   <!-- Tailwind -->
@@ -26,7 +26,9 @@
   <!-- intl-tel-input (full country code picker) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/25.10.5/css/intlTelInput.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/25.10.5/js/intlTelInput.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/25.10.5/js/utils.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- Turnstile -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
   <style>
     :root{ --purple:#5A2D91; --ink:#0B0F14; --muted:#5b6573 }
@@ -36,21 +38,12 @@
     .lightbox.open{display:flex}
     .lightbox img{max-width:min(96vw,1200px);max-height:90vh;border-radius:1rem}
     .lightbox .close{position:absolute;top:16px;right:16px;background:#fff;color:#111;padding:.5rem .75rem;border-radius:.5rem;font-weight:600}
+
+    /* Ensure plugin layout is not overridden by Tailwind paddings */
+    .iti{ width:100%; }
+    .iti input{ padding-left:52px !important; } /* room for flag + dial code */
+    .iti--separate-dial-code .iti__selected-dial-code{ font-weight:600; }
   </style>
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"Biznovatech","url":"https://biznovatech.com/","logo":"https://i.ibb.co/dJ6pxS8V/Biznovatech-Logo-more-width.png","sameAs":[]}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Biznovatech","item":"https://biznovatech.com/"},
-    {"@type":"ListItem","position":2,"name":"Jalwa Game Development","item":"https://biznovatech.com/jalwagamedevelopment"}
-  ]}
-  </script>
-
-  <!-- Turnstile -->
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body class="bg-white text-[var(--ink)]">
   <!-- Header -->
@@ -108,7 +101,7 @@
     </div>
   </section>
 
-  <!-- Features (SEO copy) -->
+  <!-- Features -->
   <section class="border-t border-gray-200 bg-white" id="features">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <h2 class="text-3xl md:text-4xl font-bold">Features that help you rank and convert</h2>
@@ -157,7 +150,7 @@
     </div>
   </section>
 
-  <!-- Tech Stack -->
+  <!-- Stack -->
   <section id="stack" class="bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <h2 class="text-3xl md:text-4xl font-bold">Preferred Tech Stack</h2>
@@ -183,7 +176,7 @@
     </div>
   </section>
 
-  <!-- Case Studies / Use-cases -->
+  <!-- Case Studies -->
   <section id="case" class="bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <h2 class="text-3xl md:text-4xl font-bold">Use-cases, Case Studies & Outcomes</h2>
@@ -262,7 +255,7 @@
 
         <!-- All-country phone (intl-tel-input) -->
         <div class="md:col-span-2">
-          <input id="phone" name="phone" class="w-full rounded-xl bg-white border border-gray-300 px-4 py-3" placeholder="Mobile number" inputmode="tel">
+          <input id="phone" type="tel" name="phone" class="w-full rounded-xl bg-white border border-gray-300 px-4 py-3" placeholder="Mobile number" inputmode="tel" autocomplete="tel">
           <input type="hidden" id="phone_e164" name="phone_e164">
         </div>
 
@@ -374,28 +367,29 @@
       window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') hide(); });
     })();
 
-   // Phone input (intl-tel-input) with auto-detect via Worker geo endpoint
-let iti = null;
-(async function(){
-  const phoneInput = document.getElementById('phone');
-  if (!phoneInput || !window.intlTelInput) return;
+    // Phone input (intl-tel-input) with auto-detect via Worker geo endpoint
+    let iti = null;
+    window.addEventListener('DOMContentLoaded', async () => {
+      const phoneInput = document.getElementById('phone');
+      if (!phoneInput || !window.intlTelInput) return;
 
-  let initial = 'in';
-  try {
-    const r = await fetch('https://jalwagameworker.sandhutransport440.workers.dev/geo/country', { cache: 'no-store' });
-    const j = await r.json();
-    if (j && j.country) initial = String(j.country).toLowerCase();
-  } catch {}
+      let initial = 'in';
+      try {
+        const r = await fetch('https://jalwagameworker.sandhutransport440.workers.dev/geo/country', { cache: 'no-store' });
+        const j = await r.json();
+        if (j && j.country) initial = String(j.country).toLowerCase();
+      } catch {}
 
-  iti = window.intlTelInput(phoneInput, {
-    initialCountry: initial,          // auto-set from Worker, e.g. "in" / "ae" / "us"
-    separateDialCode: true,           // pretty UX with visible dial code
-    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/25.10.5/js/utils.min.js"
-  });
-})();
+      iti = window.intlTelInput(phoneInput, {
+        initialCountry: initial,
+        separateDialCode: true,
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/25.10.5/js/utils.min.js"
+      });
+    });
+
     // Lead form wiring
     (function(){
-      const WORKER_URL = 'https://jalwagameworker.sandhutransport440.workers.dev';  // absolute for CORS
+      const WORKER_URL = 'https://jalwagameworker.sandhutransport440.workers.dev';
       const WHATSAPP_BUSINESS_NUMBER = '17743372572'; // digits only (no +)
 
       const form = document.getElementById('leadForm');
