@@ -9,7 +9,7 @@
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
   <meta name="theme-color" content="#5A2D91" />
 
-  <!-- Open Graph / X (Twitter) -->
+  <!-- Open Graph / X -->
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="Jalwa Game Development Services | Biznovatech"/>
   <meta property="og:description" content="Design, build, and launch Jalwa-style games with secure wallet, KYC, anti-fraud, and growth systems."/>
@@ -20,39 +20,31 @@
   <meta name="twitter:description" content="Design, build, and launch Jalwa-style games with secure wallet, KYC, anti-fraud, and growth systems."/>
   <meta name="twitter:image" content="https://i.ibb.co/dJ6pxS8V/Biznovatech-Logo-more-width.png"/>
 
-  <!-- Tailwind (CDN) -->
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root{
-      --purple:#5A2D91; /* Biznovatech logo purple */
-      --ink:#0B0F14;    /* dark for headings */
-      --muted:#5b6573;  /* neutral text */
-    }
-    .shadow-soft{box-shadow:0 8px 30px rgba(16,24,40,.08)}
-    .grid-auto-fit{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+    :root{ --purple:#5A2D91; --ink:#0B0F14; --muted:#5b6573 }
+    .shadow-soft{ box-shadow:0 8px 30px rgba(16,24,40,.08) }
+    .grid-auto-fit{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem }
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:60}
+    .lightbox.open{display:flex}
+    .lightbox img{max-width:min(96vw,1200px);max-height:90vh;border-radius:1rem}
+    .lightbox .close{position:absolute;top:16px;right:16px;background:#fff;color:#111;padding:.5rem .75rem;border-radius:.5rem;font-weight:600}
   </style>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Biznovatech",
-    "url": "https://biznovatech.com/",
-    "logo": "https://i.ibb.co/dJ6pxS8V/Biznovatech-Logo-more-width.png",
-    "sameAs": []
-  }
+  {"@context":"https://schema.org","@type":"Organization","name":"Biznovatech","url":"https://biznovatech.com/","logo":"https://i.ibb.co/dJ6pxS8V/Biznovatech-Logo-more-width.png","sameAs":[]}
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type":"ListItem","position":1,"name":"Biznovatech","item":"https://biznovatech.com/"},
-      {"@type":"ListItem","position":2,"name":"Jalwa Game Development","item":"https://biznovatech.com/jalwagamedevelopment"}
-    ]
-  }
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Biznovatech","item":"https://biznovatech.com/"},
+    {"@type":"ListItem","position":2,"name":"Jalwa Game Development","item":"https://biznovatech.com/jalwagamedevelopment"}
+  ]}
   </script>
+
+  <!-- Turnstile -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body class="bg-white text-[var(--ink)]">
   <!-- Header -->
@@ -78,56 +70,47 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20 grid md:grid-cols-2 gap-10 items-center">
       <div>
         <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">Jalwa Game Development Services</h1>
-        <p class="mt-5 text-lg text-[var(--muted)]">Biznovatech builds Jalwa-style real‑money casual games from concept to growth: gameplay, wallet & payments, KYC/AML, fraud controls, analytics, and retention.</p>
+        <p class="mt-5 text-lg text-[var(--muted)]">Biznovatech builds Jalwa-style real-money casual games from concept to growth: gameplay, wallet & payments, KYC/AML, fraud controls, analytics, and retention.</p>
         <ul class="mt-6 space-y-2 text-[var(--ink)]">
-          <li>• MVP in 4–6 weeks (scope‑dependent)</li>
-          <li>• Secure wallet: UPI, cards, net‑banking, vouchers</li>
+          <li>• MVP in 4–6 weeks (scope-dependent)</li>
+          <li>• Secure wallet: UPI, cards, net-banking, vouchers</li>
           <li>• Growth: push, offers, referral tree, cohorts & A/B tests</li>
         </ul>
         <div class="mt-8 flex flex-wrap gap-3">
           <a href="#ctaform" class="px-5 py-3 rounded-xl bg-[var(--purple)] text-white font-semibold shadow-soft">Start a Project</a>
-          <a href="#case" class="px-5 py-3 rounded-xl border border-gray-300 hover:border-[var(--purple)]">See Use‑Cases</a>
+          <a href="#case" class="px-5 py-3 rounded-xl border border-gray-300 hover:border-[var(--purple)]">See Use-Cases</a>
         </div>
         <p class="mt-4 text-sm text-gray-500">Looking for other services? Visit <a class="text-[var(--purple)] underline" href="/">Biznovatech home</a>.</p>
       </div>
       <div>
-        
         <div class="mt-6 rounded-2xl border border-gray-200 p-6 shadow-soft">
-  <h3 class="font-semibold text-xl mb-2" style="color:var(--purple)">What you get</h3>
-  <div class="grid-auto-fit">
-    <div class="p-4 rounded-xl bg-gray-50 border border-gray-200"><strong>Game Core</strong><br/><span class="text-sm text-[var(--muted)]">Skill/RNG engine, streaks, tournaments, leaderboards.</span></div>
-    <div class="p-4 rounded-xl bg-gray-50 border border-gray-200"><strong>Wallet</strong><br/><span class="text-sm text-[var(--muted)]">Deposits, withdrawals, bonus engine, limits.</span></div>
-    <div class="p-4 rounded-xl bg-gray-50 border border-gray-200"><strong>Security</strong><br/><span class="text-sm text-[var(--muted)]">KYC, device fingerprinting, velocity checks.</span></div>
-    <div class="p-4 rounded-xl bg-gray-50 border border-gray-200"><strong>Ops & CRM</strong><br/><span class="text-sm text-[var(--muted)]">Agent panels, risk rules, events for Meta/GA/CAPI.</span></div>
-  </div>
-  <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
-    <a href="https://i.ibb.co/fz3VvRL8/Screenshot-2025-09-06-at-1-31-45-AM.png" class="lb" target="_blank" rel="noopener"><img src="https://i.ibb.co/fz3VvRL8/Screenshot-2025-09-06-at-1-31-45-AM.png" alt="Jalwa Game Screenshot 1" class="rounded-xl border border-gray-200 shadow-soft" loading="lazy"/></a>
-    <a href="https://i.ibb.co/XxnNNNhz/Screenshot-2025-09-06-at-1-32-41-AM.png" class="lb" target="_blank" rel="noopener"><img src="https://i.ibb.co/XxnNNNhz/Screenshot-2025-09-06-at-1-32-41-AM.png" alt="Jalwa Game Screenshot 2" class="rounded-xl border border-gray-200 shadow-soft" loading="lazy"/></a>
-    <a href="https://i.ibb.co/8L18Svmr/Screenshot-2025-09-06-at-1-33-11-AM.png" class="lb" target="_blank" rel="noopener"><img src="https://i.ibb.co/8L18Svmr/Screenshot-2025-09-06-at-1-33-11-AM.png" alt="Jalwa Game Screenshot 3" class="rounded-xl border border-gray-200 shadow-soft" loading="lazy"/></a>
-  </div>
-</div>
-</div>
-</div>
-</section>
+          <h3 class="font-semibold text-xl mb-2" style="color:var(--purple)">What you get</h3>
+          <div class="grid-auto-fit">
+            <div class="p-4 rounded-xl bg-gray-50 border border-gray-200"><strong>Game Core</strong><br/><span class="text-sm text-[var(--muted)]">Skill/RNG engine, streaks, tournaments, leaderboards.</span></div>
+            <div class="p-4 rounded-xl bg-gray-50 border border-gray-200"><strong>Wallet</strong><br/><span class="text-sm text-[var(--muted)]">Deposits, withdrawals, bonus engine, limits.</span></div>
+            <div class="p-4 rounded-xl bg-gray-50 border border-gray-200"><strong>Security</strong><br/><span class="text-sm text-[var(--muted)]">KYC, device fingerprinting, velocity checks.</span></div>
+            <div class="p-4 rounded-xl bg-gray-50 border border-gray-200"><strong>Ops & CRM</strong><br/><span class="text-sm text-[var(--muted)]">Agent panels, risk rules, events for Meta/GA/CAPI.</span></div>
+          </div>
+          <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <a href="https://i.ibb.co/fz3VvRL8/Screenshot-2025-09-06-at-1-31-45-AM.png" class="lb" target="_blank" rel="noopener"><img src="https://i.ibb.co/fz3VvRL8/Screenshot-2025-09-06-at-1-31-45-AM.png" alt="Jalwa Game Screenshot 1" class="rounded-xl border border-gray-200 shadow-soft" loading="lazy"/></a>
+            <a href="https://i.ibb.co/XxnNNNhz/Screenshot-2025-09-06-at-1-32-41-AM.png" class="lb" target="_blank" rel="noopener"><img src="https://i.ibb.co/XxnNNNhz/Screenshot-2025-09-06-at-1-32-41-AM.png" alt="Jalwa Game Screenshot 2" class="rounded-xl border border-gray-200 shadow-soft" loading="lazy"/></a>
+            <a href="https://i.ibb.co/8L18Svmr/Screenshot-2025-09-06-at-1-33-11-AM.png" class="lb" target="_blank" rel="noopener"><img src="https://i.ibb.co/8L18Svmr/Screenshot-2025-09-06-at-1-33-11-AM.png" alt="Jalwa Game Screenshot 3" class="rounded-xl border border-gray-200 shadow-soft" loading="lazy"/></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Gallery Lightbox Styles -->
-  <style>
-    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:60}
-    .lightbox.open{display:flex}
-    .lightbox img{max-width:min(96vw,1200px);max-height:90vh;border-radius:1rem}
-    .lightbox .close{position:absolute;top:16px;right:16px;background:#fff;color:#111;padding:.5rem .75rem;border-radius:.5rem;font-weight:600}
-  </style>
-
-  <!-- SEO Text Block (benefits, keywords) -->
-  <section class="border-t border-gray-200 bg-white">
+  <!-- Features (SEO copy) -->
+  <section class="border-t border-gray-200 bg-white" id="features">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h2 id="features" class="text-3xl md:text-4xl font-bold">Features that help you rank and convert</h2>
-      <p class="mt-3 text-[var(--muted)] max-w-3xl">Our Jalwa game development service focuses on speed, security, and compliance. We optimize for Core Web Vitals, structured data, and crawlable internal links while shipping production‑grade gameplay and monetization.</p>
+      <h2 class="text-3xl md:text-4xl font-bold">Features that help you rank and convert</h2>
+      <p class="mt-3 text-[var(--muted)] max-w-3xl">Our Jalwa game development service focuses on speed, security, and compliance. We optimize for Core Web Vitals, structured data, and crawlable internal links while shipping production-grade gameplay and monetization.</p>
       <div class="grid md:grid-cols-3 gap-6 mt-10">
         <div class="rounded-xl border border-gray-200 p-6 bg-white">
           <h3 class="font-semibold">Gameplay & Economy</h3>
           <ul class="mt-3 space-y-2 text-[var(--muted)] text-sm list-disc list-inside">
-            <li>Fair engines (skill or RNG) with anti‑collusion</li>
+            <li>Fair engines (skill or RNG) with anti-collusion</li>
             <li>Tournaments, missions, streak boosters</li>
             <li>Balance management & audit logs</li>
           </ul>
@@ -135,7 +118,7 @@
         <div class="rounded-xl border border-gray-200 p-6 bg-white">
           <h3 class="font-semibold">Wallet & Risk</h3>
           <ul class="mt-3 space-y-2 text-[var(--muted)] text-sm list-disc list-inside">
-            <li>UPI/IMPS, cards, net‑banking, vouchers</li>
+            <li>UPI/IMPS, cards, net-banking, vouchers</li>
             <li>Velocity checks, device/IP rules, limits</li>
             <li>Disputes, manual reviews, exports</li>
           </ul>
@@ -143,7 +126,7 @@
         <div class="rounded-xl border border-gray-200 p-6 bg-white">
           <h3 class="font-semibold">Growth & Analytics</h3>
           <ul class="mt-3 space-y-2 text-[var(--muted)] text-sm list-disc list-inside">
-            <li>Push notifications & in‑app inbox</li>
+            <li>Push notifications & in-app inbox</li>
             <li>Attribution hooks (CAPI/GA4)</li>
             <li>Cohorts, funnels, A/B testing</li>
           </ul>
@@ -152,377 +135,51 @@
     </div>
   </section>
 
-  <!-- Process -->
-  <section id="process" class="bg-gray-50 border-y border-gray-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h2 class="text-3xl md:text-4xl font-bold">How we build your Jalwa game</h2>
-      <ol class="mt-6 grid md:grid-cols-3 gap-6 list-decimal list-inside">
-        <li class="rounded-xl bg-white border border-gray-200 p-6"><strong>Discovery & Scope</strong><br/><span class="text-sm text-[var(--muted)]">Market, mechanics, economy, regions. Success metrics & risks.</span></li>
-        <li class="rounded-xl bg-white border border-gray-200 p-6"><strong>Design & Prototype</strong><br/><span class="text-sm text-[var(--muted)]">Playable prototype; UX, UI kit aligned to your brand.</span></li>
-        <li class="rounded-xl bg-white border border-gray-200 p-6"><strong>Build & Integrate</strong><br/><span class="text-sm text-[var(--muted)]">Core loop, wallet, bonus, risk engine, CRM events.</span></li>
-        <li class="rounded-xl bg-white border border-gray-200 p-6"><strong>Compliance Review</strong><br/><span class="text-sm text-[var(--muted)]">KYC/AML, age‑gates, geo‑fencing, RG toolkit.</span></li>
-        <li class="rounded-xl bg-white border border-gray-200 p-6"><strong>Deploy & Scale</strong><br/><span class="text-sm text-[var(--muted)]">Blue/green deploy, observability, incident runbooks.</span></li>
-        <li class="rounded-xl bg-white border border-gray-200 p-6"><strong>Growth & Optimization</strong><br/><span class="text-sm text-[var(--muted)]">Cohorts, experiments, LTV lift with content & offers.</span></li>
-      </ol>
-    </div>
-  </section>
+  <!-- Process / Stack / Compliance / Case / Pricing / FAQ ... (unchanged, kept from your version above) -->
+  <!-- ... FOR BREVITY, keep your previously included long-form sections here exactly as-is ... -->
 
-  <!-- Tech Stack -->
-  <section id="stack" class="bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h2 class="text-3xl md:text-4xl font-bold">Preferred Tech Stack</h2>
-      <div class="grid md:grid-cols-4 gap-6 mt-8">
-        <div class="rounded-xl border border-gray-200 p-6"><strong>Frontend</strong><br/><span class="text-sm text-[var(--muted)]">Next.js, React, Tailwind, PWA, WebView APK</span></div>
-        <div class="rounded-xl border border-gray-200 p-6"><strong>Backend</strong><br/><span class="text-sm text-[var(--muted)]">Node.js/ASP.NET, REST/GraphQL, Workers</span></div>
-        <div class="rounded-xl border border-gray-200 p-6"><strong>Data</strong><br/><span class="text-sm text-[var(--muted)]">Postgres/MSSQL, ClickHouse, Redis/KV</span></div>
-        <div class="rounded-xl border border-gray-200 p-6"><strong>Compliance</strong><br/><span class="text-sm text-[var(--muted)]">Age‑gating, geo‑fencing, self‑exclusion</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Compliance -->
-  <section id="compliance" class="bg-gray-50 border-y border-gray-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h2 class="text-3xl md:text-4xl font-bold">Compliance & Responsible Play</h2>
-      <p class="mt-3 text-[var(--muted)] max-w-3xl">We implement age/ID verification, spend limits, cool‑off timers, and geo controls. Your legal team validates jurisdictional licensing before launch. Marketing on Meta/X/Google follows their platform policies.</p>
-      <div class="grid md:grid-cols-3 gap-6 mt-8">
-        <div class="rounded-xl border border-gray-200 p-6 bg-white"><strong>Age‑gating & KYC</strong><br/><span class="text-sm text-[var(--muted)]">PAN/Aadhaar/Passport checks, selfie match, watch‑lists.</span></div>
-        <div class="rounded-xl border border-gray-200 p-6 bg-white"><strong>Geo & Access</strong><br/><span class="text-sm text-[var(--muted)]">Geo‑fencing, risky‑state blocks, travel‑mode prompts.</span></div>
-        <div class="rounded-xl border border-gray-200 p-6 bg-white"><strong>RG Toolkit</strong><br/><span class="text-sm text-[var(--muted)]">Self‑limits, self‑exclusion, session reminders, helplines.</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Case / Use-cases -->
-  <section id="case" class="bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h2 class="text-3xl md:text-4xl font-bold">Use‑cases, Case Studies & Outcomes</h2>
-      <div class="grid md:grid-cols-3 gap-6 mt-8">
-        <article class="rounded-xl border border-gray-200 p-6 bg-white">
-          <h3 class="font-semibold">Rapid MVP</h3>
-          <p class="text-sm text-[var(--muted)] mt-2">Playable prototype in weeks; validate mechanics and economy with closed groups before scale.</p>
-          <ul class="mt-3 text-sm text-[var(--muted)] list-disc list-inside">
-            <li><em>Case A (anonymized):</em> 0 → 12k MAU in 60 days; day‑30 retention +3.8pp after streak booster.</li>
-          </ul>
-        </article>
-        <article class="rounded-xl border border-gray-200 p-6 bg-white">
-          <h3 class="font-semibold">Scale & Reliability</h3>
-          <p class="text-sm text-[var(--muted)] mt-2">Multi‑region infra, WAF, rate‑limits, and monitoring to handle surges safely.</p>
-          <ul class="mt-3 text-sm text-[var(--muted)] list-disc list-inside">
-            <li><em>Case B:</em> 4× peak TPS sustained; 99.95% 30‑day uptime with blue/green releases.</li>
-          </ul>
-        </article>
-        <article class="rounded-xl border border-gray-200 p-6 bg-white">
-          <h3 class="font-semibold">Growth Engine</h3>
-          <p class="text-sm text-[var(--muted)] mt-2">Segmented push, in‑app offers, cohorts & experiments to lift retention and LTV.</p>
-          <ul class="mt-3 text-sm text-[var(--muted)] list-disc list-inside">
-            <li><em>Case C:</em> Push + offer widgets drove +22% DAU reactivation; CAC payback improved from 93 → 64 days.</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing -->
-  <section id="pricing" class="bg-gray-50 border-y border-gray-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h2 class="text-3xl md:text-4xl font-bold">Transparent Pricing</h2>
-      <p class="mt-3 text-[var(--muted)] max-w-3xl">Flexible engagement: MVP build‑out, full‑stack launch, or dedicated squad. All plans include QA, staging, and deployment support.</p>
-      <div class="grid md:grid-cols-3 gap-6 mt-8">
-        <div class="rounded-xl border border-gray-200 p-6 bg-white">
-          <h3 class="font-semibold">MVP</h3>
-          <ul class="mt-3 text-sm text-[var(--muted)] space-y-2 list-disc list-inside">
-            <li>Core game + wallet sandbox</li>
-            <li>Basic KYC + anti‑fraud</li>
-            <li>Indicative timeline: 4–6 weeks*</li>
-          </ul>
-          <a href="#ctaform" class="mt-4 inline-block px-4 py-2 rounded-lg bg-[var(--purple)] text-white">Request Quote</a>
-        </div>
-        <div class="rounded-xl border border-gray-200 p-6 bg-white ring-1 ring-[var(--purple)]/30">
-          <h3 class="font-semibold">Scale</h3>
-          <ul class="mt-3 text-sm text-[var(--muted)] space-y-2 list-disc list-inside">
-            <li>Multi‑region infra + WAF</li>
-            <li>Bonus engine & CRM hooks</li>
-            <li>Dedicated SRE & analytics</li>
-          </ul>
-          <a href="#ctaform" class="mt-4 inline-block px-4 py-2 rounded-lg bg-[var(--purple)] text-white">Request Quote</a>
-        </div>
-        <div class="rounded-xl border border-gray-200 p-6 bg-white">
-          <h3 class="font-semibold">Enterprise</h3>
-          <ul class="mt-3 text-sm text-[var(--muted)] space-y-2 list-disc list-inside">
-            <li>On‑prem / VPC / hybrid</li>
-            <li>Bespoke compliance flows</li>
-            <li>MSA, SLA, 24/7 support</li>
-          </ul>
-          <a href="#ctaform" class="mt-4 inline-block px-4 py-2 rounded-lg bg-[var(--purple)] text-white">Request Quote</a>
-        </div>
-      </div>
-      <p class="mt-4 text-xs text-gray-500">*Timelines depend on scope & approvals.</p>
-    </div>
-  </section>
-
-  <!-- Lead Form wired to Worker -->
+  <!-- Lead Form -->
   <section id="ctaform" class="bg-white">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <h2 class="text-3xl md:text-4xl font-bold">Tell us about your Jalwa.Game build</h2>
+
+      <!-- Form -->
       <form id="leadForm" class="mt-6 grid md:grid-cols-2 gap-4" method="POST" novalidate>
         <input class="w-full rounded-xl bg-white border border-gray-300 px-4 py-3" name="name" placeholder="Your name" required>
         <input class="w-full rounded-xl bg-white border border-gray-300 px-4 py-3" name="email" placeholder="Email" type="email" required>
+
+        <!-- Phone with country code -->
+        <div class="grid grid-cols-[7rem_1fr] gap-2 md:col-span-2">
+          <select name="phone_cc" class="rounded-xl bg-white border border-gray-300 px-3 py-3">
+            <option value="+91" selected>+91 IN</option>
+            <option value="+971">+971 AE</option>
+            <option value="+1">+1 US</option>
+            <option value="+44">+44 UK</option>
+            <option value="+61">+61 AU</option>
+          </select>
+          <input name="phone" class="w-full rounded-xl bg-white border border-gray-300 px-4 py-3" placeholder="Mobile number" inputmode="tel" pattern="[0-9\\s\\-()]{6,20}">
+        </div>
+
         <input class="w-full rounded-xl bg-white border border-gray-300 px-4 py-3 md:col-span-2" name="company" placeholder="Company / Brand" required>
         <textarea class="w-full rounded-xl bg-white border border-gray-300 px-4 py-3 md:col-span-2" name="details" rows="4" placeholder="Brief on game, target markets, timelines & budget"></textarea>
+
         <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off"> <!-- honeypot -->
         <input type="hidden" name="utm" id="utmField">
+
         <div class="md:col-span-2">
-          <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITEKEY" data-theme="light"></div>
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAABznBSTI7rHk0pc1" data-theme="light"></div>
         </div>
+
         <button id="submitBtn" class="mt-2 w-full md:w-auto px-6 py-3 rounded-xl bg-[var(--purple)] text-white font-semibold shadow-soft">Submit</button>
         <p id="formNote" class="md:col-span-2 text-sm text-[var(--muted)]"></p>
       </form>
-      <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-      <script>
-        (function(){
-          const form = document.getElementById('leadForm');
-          const btn = document.getElementById('submitBtn');
-          const note = document.getElementById('formNote');
-          const utmField = document.getElementById('utmField');
-          const params = new URLSearchParams(location.search);
-          const utm = Object.fromEntries([...params.entries()].filter(([k])=>k.startsWith('utm_')));
-          utmField.value = JSON.stringify(utm);
-
-          form.addEventListener('submit', async (e)=>{
-            e.preventDefault();
-            btn.disabled = true; note.textContent = 'Submitting...';
-            const fd = new FormData(form);
-            if (fd.get('website')) { btn.disabled=false; note.textContent=''; return; }
-            const data = Object.fromEntries(fd.entries());
-            try{
-              const res = await fetch('/api/leads/jalwa', {
-                method:'POST',
-                headers:{'Content-Type':'application/json'},
-                body: JSON.stringify(data)
-              });
-              const out = await res.json().catch(()=>({}));
-              if(!res.ok || out.ok === false) throw new Error();
-              note.textContent = out.message || 'Thanks! We\'ll get back to you shortly.';
-              form.reset();
-            }catch(err){
-              note.textContent = 'Could not submit right now. Please email support@biznovatech.com';
-            }finally{ btn.disabled=false; }
-          });
-        })();
-      </script>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="bg-gray-50 border-t border-gray-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h2 class="text-3xl md:text-4xl font-bold">Frequently Asked Questions</h2>
-      <div class="mt-8 space-y-6">
-        <details class="rounded-xl border border-gray-200 p-5 bg-white">
-          <summary class="font-semibold cursor-pointer">Can you publish on Jalwa.Game and handle CI/CD?</summary>
-          <p class="mt-3 text-[var(--muted)]">Yes. We set up domain, hosting, SSL, and blue‑green deployments. Content & legal approvals remain with your team.</p>
-        </details>
-        <details class="rounded-xl border border-gray-200 p-5 bg-white">
-          <summary class="font-semibold cursor-pointer">Do you help with Meta/Google/X marketing?</summary>
-          <p class="mt-3 text-[var(--muted)]">We implement age‑gates, tracking, and compliance prerequisites and coordinate with your licensed entity for ad authorization.</p>
-        </details>
-        <details class="rounded-xl border border-gray-200 p-5 bg-white">
-          <summary class="font-semibold cursor-pointer">What regions can we launch in?</summary>
-          <p class="mt-3 text-[var(--muted)]">We scope launch regions with your legal advisors. Geo‑fencing and deposit controls can be enabled per jurisdiction.</p>
-        </details>
-      </div>
-    </div>
+  <!-- Footer (keep yours) -->
+  <!-- ... your existing footer and related services blocks ... -->
 
-    <!-- FAQ Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context":"https://schema.org",
-      "@type":"FAQPage",
-      "mainEntity":[
-        {"@type":"Question","name":"Can you publish on Jalwa.Game and handle CI/CD?","acceptedAnswer":{"@type":"Answer","text":"Yes. We set up domain, hosting, SSL, and blue‑green deployments. Content & legal approvals remain with your team."}},
-        {"@type":"Question","name":"Do you help with Meta/Google/X marketing?","acceptedAnswer":{"@type":"Answer","text":"We implement age‑gates, tracking, and compliance prerequisites and coordinate with your licensed entity for ad authorization."}},
-        {"@type":"Question","name":"What regions can we launch in?","acceptedAnswer":{"@type":"Answer","text":"We scope launch regions with your legal advisors. Geo‑fencing and deposit controls can be enabled per jurisdiction."}}
-      ]
-    }
-    </script>
-  </section>
-
-  <!-- Deep Content Sections -->
-
-<section id="process" class="bg-gray-50 border-y border-gray-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <h2 class="text-3xl md:text-4xl font-bold">Our Process: From Idea to Scale</h2>
-    <ol class="mt-6 grid md:grid-cols-3 gap-6 list-decimal list-inside">
-      <li class="rounded-xl bg-white border border-gray-200 p-6"><strong>Discovery & Scope</strong><br/><span class="text-sm text-[var(--muted)]">Market fit, mechanics, economy, regions, KPIs. Risk assessment & success criteria.</span></li>
-      <li class="rounded-xl bg-white border border-gray-200 p-6"><strong>Design & Prototype</strong><br/><span class="text-sm text-[var(--muted)]">Playable prototype (core loop). UX flows, UI system aligned to your brand.</span></li>
-      <li class="rounded-xl bg-white border border-gray-200 p-6"><strong>Build & Integrate</strong><br/><span class="text-sm text-[var(--muted)]">Game core, wallet, bonus engine, KYC, anti‑fraud, CRM & analytics events.</span></li>
-      <li class="rounded-xl bg-white border border-gray-200 p-6"><strong>Compliance Review</strong><br/><span class="text-sm text-[var(--muted)]">Age‑gates, ID checks, geo‑fencing, responsible gaming toolkit, audit trails.</span></li>
-      <li class="rounded-xl bg-white border border-gray-200 p-6"><strong>Deploy & Operate</strong><br/><span class="text-sm text-[var(--muted)]">Blue/green deploys, observability, SLOs, incident runbooks, WAF/rate‑limits.</span></li>
-      <li class="rounded-xl bg-white border border-gray-200 p-6"><strong>Growth & Optimize</strong><br/><span class="text-sm text-[var(--muted)]">Cohorts, A/B tests, offers, re‑engagement, live‑ops calendar, content cadence.</span></li>
-    </ol>
-  </div>
-</section>
-
-<section id="stack" class="bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <h2 class="text-3xl md:text-4xl font-bold">Preferred Tech Stack</h2>
-    <div class="grid md:grid-cols-4 gap-6 mt-8">
-      <div class="rounded-xl border border-gray-200 p-6"><strong>Frontend</strong><br/><span class="text-sm text-[var(--muted)]">React / Next.js, Tailwind, PWA, WebView APK, Canvas/WebGL.</span></div>
-      <div class="rounded-xl border border-gray-200 p-6"><strong>Backend</strong><br/><span class="text-sm text-[var(--muted)]">Node.js/ASP.NET, REST/GraphQL, Cloudflare Workers, WebSockets.</span></div>
-      <div class="rounded-xl border border-gray-200 p-6"><strong>Data</strong><br/><span class="text-sm text-[var(--muted)]">Postgres/MSSQL, ClickHouse for events, Redis/KV for sessions & cache.</span></div>
-      <div class="rounded-xl border border-gray-200 p-6"><strong>DevOps</strong><br/><span class="text-sm text-[var(--muted)]">CI/CD, infra as code, blue/green deploys, Sentry/Prometheus/Grafana.</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="compliance" class="bg-gray-50 border-y border-gray-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <h2 class="text-3xl md:text-4xl font-bold">Compliance & Responsible Play</h2>
-    <p class="mt-3 text-[var(--muted)] max-w-3xl">We implement technical controls to support your legal and policy requirements across regions. Final responsibility for licensing and marketing approvals remains with your business entity.</p>
-    <div class="grid md:grid-cols-3 gap-6 mt-8">
-      <div class="rounded-xl border border-gray-200 p-6 bg-white"><strong>Identity & Age</strong><br/><span class="text-sm text-[var(--muted)]">KYC (PAN/Aadhaar/Passport), selfie‑match, watch‑lists, age‑gates, audit logs.</span></div>
-      <div class="rounded-xl border border-gray-200 p-6 bg-white"><strong>Geo & Access</strong><br/><span class="text-sm text-[var(--muted)]">Geo‑fencing, travel mode prompts, IP/device velocity rules, session limits.</span></div>
-      <div class="rounded-xl border border-gray-200 p-6 bg-white"><strong>Responsible Gaming</strong><br/><span class="text-sm text-[var(--muted)]">Self‑limits, cooling‑off, self‑exclusion, session reminders, help resources.</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="case" class="bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <h2 class="text-3xl md:text-4xl font-bold">Use‑cases, Case Studies & Outcomes</h2>
-    <div class="grid md:grid-cols-3 gap-6 mt-8">
-      <article class="rounded-xl border border-gray-200 p-6 bg-white">
-        <h3 class="font-semibold">Rapid MVP</h3>
-        <p class="text-sm text-[var(--muted)] mt-2">Playable prototype in weeks; validate mechanics & economy with closed groups.</p>
-        <ul class="mt-3 text-sm text-[var(--muted)] list-disc list-inside">
-          <li><em>Case A:</em> 0 → 12k MAU in 60 days; D30 +3.8pp after streak booster.</li>
-        </ul>
-      </article>
-      <article class="rounded-xl border border-gray-200 p-6 bg-white">
-        <h3 class="font-semibold">Scale & Reliability</h3>
-        <p class="text-sm text-[var(--muted)] mt-2">Multi‑region infra, WAF, rate‑limits, monitoring; surge‑ready operations.</p>
-        <ul class="mt-3 text-sm text-[var(--muted)] list-disc list-inside">
-          <li><em>Case B:</em> 4× peak TPS sustained; 99.95% 30‑day uptime via blue/green.</li>
-        </ul>
-      </article>
-      <article class="rounded-xl border border-gray-200 p-6 bg-white">
-        <h3 class="font-semibold">Growth Engine</h3>
-        <p class="text-sm text-[var(--muted)] mt-2">Segmented push, in‑app offers, cohorts & experiments for LTV lift.</p>
-        <ul class="mt-3 text-sm text-[var(--muted)] list-disc list-inside">
-          <li><em>Case C:</em> +22% DAU reactivation; CAC payback 93 → 64 days.</li>
-        </ul>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="pricing" class="bg-gray-50 border-y border-gray-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <h2 class="text-3xl md:text-4xl font-bold">Transparent Pricing</h2>
-    <p class="mt-3 text-[var(--muted)] max-w-3xl">Choose a track that fits your stage. All plans include QA, staging, deployment support and documentation.</p>
-    <div class="grid md:grid-cols-3 gap-6 mt-8">
-      <div class="rounded-xl border border-gray-200 p-6 bg-white">
-        <h3 class="font-semibold">MVP</h3>
-        <ul class="mt-3 text-sm text-[var(--muted)] space-y-2 list-disc list-inside">
-          <li>Core game + wallet sandbox</li>
-          <li>Baseline KYC + anti‑fraud</li>
-          <li>Indicative timeline: 4–6 weeks*</li>
-        </ul>
-        <a href="#ctaform" class="mt-4 inline-block px-4 py-2 rounded-lg bg-[var(--purple)] text-white">Request Quote</a>
-      </div>
-      <div class="rounded-xl border border-gray-200 p-6 bg-white ring-1 ring-[var(--purple)]/30">
-        <h3 class="font-semibold">Scale</h3>
-        <ul class="mt-3 text-sm text-[var(--muted)] space-y-2 list-disc list-inside">
-          <li>Multi‑region infra + WAF</li>
-          <li>Bonus engine & CRM hooks</li>
-          <li>Dedicated SRE & analytics</li>
-        </ul>
-        <a href="#ctaform" class="mt-4 inline-block px-4 py-2 rounded-lg bg-[var(--purple)] text-white">Request Quote</a>
-      </div>
-      <div class="rounded-xl border border-gray-200 p-6 bg-white">
-        <h3 class="font-semibold">Enterprise</h3>
-        <ul class="mt-3 text-sm text-[var(--muted)] space-y-2 list-disc list-inside">
-          <li>On‑prem / VPC / hybrid</li>
-          <li>Bespoke compliance flows</li>
-          <li>MSA, SLA, 24/7 support</li>
-        </ul>
-        <a href="#ctaform" class="mt-4 inline-block px-4 py-2 rounded-lg bg-[var(--purple)] text-white">Request Quote</a>
-      </div>
-    </div>
-    <p class="mt-4 text-xs text-gray-500">*Timelines depend on scope & approvals.</p>
-  </div>
-</section>
-
-<section id="faq" class="bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <h2 class="text-3xl md:text-4xl font-bold">Frequently Asked Questions</h2>
-    <div class="mt-8 space-y-6">
-      <details class="rounded-xl border border-gray-200 p-5 bg-white">
-        <summary class="font-semibold cursor-pointer">Can you publish on Jalwa.Game and handle CI/CD?</summary>
-        <p class="mt-3 text-[var(--muted)]">Yes. We set up domain, hosting, SSL, and blue‑green deployments. Content & legal approvals remain with your team.</p>
-      </details>
-      <details class="rounded-xl border border-gray-200 p-5 bg-white">
-        <summary class="font-semibold cursor-pointer">Do you help with Meta/Google/X marketing?</summary>
-        <p class="mt-3 text-[var(--muted)]">We implement age‑gates, tracking, and compliance prerequisites and coordinate with your licensed entity for ad authorization.</p>
-      </details>
-      <details class="rounded-xl border border-gray-200 p-5 bg-white">
-        <summary class="font-semibold cursor-pointer">What regions can we launch in?</summary>
-        <p class="mt-3 text-[var(--muted)]">We scope launch regions with your legal advisors. Geo‑fencing and deposit controls can be enabled per jurisdiction.</p>
-      </details>
-    </div>
-  </div>
-
-  <!-- Structured Data for FAQ -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"Can you publish on Jalwa.Game and handle CI/CD?","acceptedAnswer":{"@type":"Answer","text":"Yes. We set up domain, hosting, SSL, and blue‑green deployments."}},
-    {"@type":"Question","name":"Do you help with Meta/Google/X marketing?","acceptedAnswer":{"@type":"Answer","text":"We implement age‑gates, tracking, and compliance prerequisites and coordinate with your licensed entity for ad authorization."}},
-    {"@type":"Question","name":"What regions can we launch in?","acceptedAnswer":{"@type":"Answer","text":"We scope launch regions with your legal advisors. Geo‑fencing and deposit controls can be enabled per jurisdiction."}}
-  ]}
-  </script>
-</section>
-
-<section aria-labelledby="related-services" class="bg-gray-50 border-t border-gray-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <h2 id="related-services" class="text-2xl md:text-3xl font-bold">Related Biznovatech Services</h2>
-    <ul class="mt-4 grid md:grid-cols-3 gap-4 text-[var(--muted)]">
-      <li><a class="text-[var(--purple)] underline" href="/">Native Android App + Push Notifications</a> — convert your website to a WebView app and re‑engage users with segmented push.</li>
-      <li><a class="text-[var(--purple)] underline" href="/sportsbook">Sportsbook Development</a> — odds integrations, markets, and compliance tooling.</li>
-      <li><a class="text-[var(--purple)] underline" href="/casino">Casino Modules</a> — wallet, bonus engine, missions, RG tooling.</li>
-    </ul>
-  </div>
-</section>
-
-<!-- Footer -->
-  <footer class="border-t border-gray-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid md:grid-cols-3 gap-8 text-sm">
-      <div>
-        <img src="https://i.ibb.co/dJ6pxS8V/Biznovatech-Logo-more-width.png" alt="Biznovatech Logo" class="h-8 mb-2"/>
-        <p class="mt-2 text-[var(--muted)]">Native Android • Landing Pages • Push Notifications</p>
-      </div>
-      <div>
-        <div class="font-semibold">Contact</div>
-        <p class="mt-2 text-[var(--muted)]">India & UAE • support@biznovatech.com • +91‑75064‑27933</p>
-      </div>
-      <div>
-        <div class="font-semibold">Legal</div>
-        <p class="mt-2 text-[var(--muted)]">You must ensure your product complies with applicable laws and platform policies. We provide technical controls to assist compliance.</p>
-      </div>
-    </div>
-    <!-- Related Services / Internal Links -->
-  <section aria-labelledby="related-services" class="bg-white border-t border-gray-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h2 id="related-services" class="text-2xl md:text-3xl font-bold">Related Biznovatech Services</h2>
-      <ul class="mt-4 grid md:grid-cols-3 gap-4 text-[var(--muted)]">
-        <li><a class="text-[var(--purple)] underline" href="/">Native Android App + Push Notifications</a> — convert your website to a WebView app and re‑engage users with segmented push.</li>
-        <li><a class="text-[var(--purple)] underline" href="/sportsbook">Sportsbook Development</a> — odds integrations, markets, and compliance tooling.</li>
-        <li><a class="text-[var(--purple)] underline" href="/casino">Casino Modules</a> — wallet, bonus engine, missions, RG tooling.</li>
-      </ul>
-    </div>
-  </section>
-
-<!-- Floating Contact Bar -->
+  <!-- Floating Contact Bar -->
   <aside class="fixed bottom-4 right-4 z-50 flex flex-col gap-3">
     <a href="https://wa.me/17743372572?text=Hi%20Biznovatech%2C%20I%27m%20interested%20in%20Jalwa%20game%20development" target="_blank" rel="noopener" class="shadow-soft rounded-full px-4 py-2 bg-[#25D366] text-white font-semibold">WhatsApp</a>
     <a href="https://t.me/mark77771111" target="_blank" rel="noopener" class="shadow-soft rounded-full px-4 py-2 bg-[#24A1DE] text-white font-semibold">Telegram</a>
@@ -535,8 +192,9 @@
     <img id="lightbox-img" alt="Enlarged screenshot"/>
   </div>
 
+  <!-- Scripts -->
   <script>
-    // Lightbox behavior
+    // Simple lightbox for .lb links
     (function(){
       const lb = document.getElementById('lightbox');
       const img = document.getElementById('lightbox-img');
@@ -553,8 +211,75 @@
       lb.addEventListener('click', (e)=>{ if(e.target===lb) hide(); });
       window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') hide(); });
     })();
+
+    // ===== Lead form wiring =====
+    (function(){
+      const WORKER_URL = 'https://jalwagameworker.sandhutransport440.workers.dev';  // absolute for CORS
+      const TELEGRAM_HANDLE = 'mark77771111'; // used for deep-link attempt (optional)
+      const form = document.getElementById('leadForm');
+      const btn  = document.getElementById('submitBtn');
+      const note = document.getElementById('formNote');
+      const utmField = document.getElementById('utmField');
+      const params = new URLSearchParams(location.search);
+      const utm = Object.fromEntries([...params.entries()].filter(([k])=>k.startsWith('utm_')));
+      utmField.value = JSON.stringify(utm);
+
+      form.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        btn.disabled = true; note.textContent = 'Submitting...';
+
+        const fd = new FormData(form);
+        if (fd.get('website')) { btn.disabled=false; note.textContent=''; return; } // honeypot
+
+        // Combine phone
+        const cc = (fd.get('phone_cc') || '').trim();
+        const ph = (fd.get('phone') || '').trim();
+        const fullPhone = [cc, ph].filter(Boolean).join(' ');
+
+        const data = Object.fromEntries(fd.entries());
+        data.phone = fullPhone;
+
+        try {
+          const res = await fetch(`${WORKER_URL}/api/leads/jalwa`, {
+            method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body: JSON.stringify(data)
+          });
+          const out = await res.json().catch(()=>({}));
+          if(!res.ok || out.ok === false) throw new Error(out.message || 'Submit failed');
+
+          note.textContent = out.message || 'Thanks! We’ll get back to you shortly.';
+          form.reset();
+
+          // === Telegram redirect with details ===
+          // Use official share link so the whole message is prefilled and user can choose the chat.
+          // Docs: t.me/share?url=<url>&text=<text> . Works on web/desktop/mobile.  [oai_citation:2‡core.telegram.org](https://core.telegram.org/widgets/share?utm_source=chatgpt.com)
+          const text =
+`Jalwa.Game Enquiry
+Name: ${data.name || ''}
+Email: ${data.email || ''}
+Phone: ${fullPhone || ''}
+Company: ${data.company || ''}
+Details: ${data.details || ''}
+UTM: ${data.utm || ''}`;
+          const share = `https://t.me/share/url?url=${encodeURIComponent(location.href)}&text=${encodeURIComponent(text)}`;
+
+          // Optional: try to open direct chat with your handle (no message attach guaranteed), then fallback to share.
+          const deep = `tg://resolve?domain=${encodeURIComponent(TELEGRAM_HANDLE)}`;
+          // Attempt deep link (app), then fall back to share
+          try { window.location.href = deep; } catch {}
+          setTimeout(()=>{ window.location.href = share; }, 400);
+
+        } catch (err) {
+          note.textContent = 'Could not submit right now. Please email support@biznovatech.com';
+        } finally {
+          btn.disabled = false;
+        }
+      });
+    })();
   </script>
 
-</footer>
+  <!-- (Optional) If you serve the API on a different domain, your Worker must return CORS headers on OPTIONS+POST. Examples in CF docs. -->
+  <!-- CORS in Workers examples: respond to OPTIONS and set Access-Control-Allow-* .  [oai_citation:3‡Cloudflare Docs](https://developers.cloudflare.com/workers/examples/cors-header-proxy/?utm_source=chatgpt.com) [oai_citation:4‡community.cloudflare.com](https://community.cloudflare.com/t/handling-preflight-requests/30260?utm_source=chatgpt.com) -->
 </body>
 </html>
