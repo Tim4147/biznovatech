@@ -25,7 +25,9 @@
 
   <!-- intl-tel-input (full country code picker) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/25.10.5/css/intlTelInput.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/25.10.5/js/intlTelInput.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/25.10.5/js/intlTelInput.min.js"
+          crossorigin="anonymous" referrerpolicy="no-referrer"
+          onload="window.__itiReady = true"></script>
 
   <!-- Turnstile -->
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
@@ -40,9 +42,9 @@
     .lightbox .close{position:absolute;top:16px;right:16px;background:#fff;color:#111;padding:.5rem .75rem;border-radius:.5rem;font-weight:600}
 
     /* Ensure plugin layout is not overridden by Tailwind paddings */
-    .iti{ width:100%; }
-    .iti input{ padding-left:52px !important; } /* room for flag + dial code */
-    .iti--separate-dial-code .iti__selected-dial-code{ font-weight:600; }
+    .iti{ width:100% }
+    .iti input{ padding-left:84px !important }  /* room for flag + long dial codes */
+    .iti--separate-dial-code .iti__selected-dial-code{ font-weight:600 }
   </style>
 </head>
 <body class="bg-white text-[var(--ink)]">
@@ -367,25 +369,43 @@
       window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') hide(); });
     })();
 
-    // Phone input (intl-tel-input) with auto-detect via Worker geo endpoint
+    // ---- Phone input (intl-tel-input) robust init + auto-detect via Worker ----
     let iti = null;
-    window.addEventListener('DOMContentLoaded', async () => {
-      const phoneInput = document.getElementById('phone');
-      if (!phoneInput || !window.intlTelInput) return;
 
-      let initial = 'in';
+    async function detectCountry() {
       try {
         const r = await fetch('https://jalwagameworker.sandhutransport440.workers.dev/geo/country', { cache: 'no-store' });
         const j = await r.json();
-        if (j && j.country) initial = String(j.country).toLowerCase();
+        if (j && j.country) return String(j.country).toLowerCase();
       } catch {}
+      return 'in'; // fallback
+    }
+
+    async function waitForITI(maxMs=8000){
+      const start = Date.now();
+      while (!window.intlTelInput) {
+        await new Promise(r=>setTimeout(r,100));
+        if (Date.now()-start > maxMs) break;
+      }
+      return !!window.intlTelInput;
+    }
+
+    async function initPhone(){
+      const phoneInput = document.getElementById('phone');
+      if (!phoneInput) return;
+
+      if (!window.__itiReady) { await waitForITI(); }
+      if (!window.intlTelInput) return; // leave as plain input if library blocked
+
+      const initial = await detectCountry();
 
       iti = window.intlTelInput(phoneInput, {
         initialCountry: initial,
         separateDialCode: true,
         utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/25.10.5/js/utils.min.js"
       });
-    });
+    }
+    window.addEventListener('DOMContentLoaded', initPhone);
 
     // Lead form wiring
     (function(){
@@ -441,8 +461,7 @@ Phone: ${data.phone || ''}
 Company: ${data.company || ''}
 Details: ${data.details || ''}
 UTM: ${data.utm || ''}`;
-          const url = `https://wa.me/${WHATSAPP_BUSINESS_NUMBER}?text=${encodeURIComponent(msg)}`;
-          window.location.href = url;
+          window.location.href = `https://wa.me/${WHATSAPP_BUSINESS_NUMBER}?text=${encodeURIComponent(msg)}`;
 
         } catch (err) {
           note.textContent = 'Could not submit right now. Please email support@biznovatech.com';
