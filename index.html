@@ -26,6 +26,24 @@
 <meta name="twitter:description" content="Convert your site to a native Android app, add a high-converting landing page, and re-engage customers with push notifications." />
 <meta name="twitter:image" content="https://biznovatech.com/og-image.png" />
 
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){
+  if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)
+}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1278775833486145');
+fbq('track', 'PageView');
+/* Optional: a generic content view for the homepage */
+fbq('track', 'ViewContent', {content_name: 'Homepage'});
+</script>
+<!-- End Meta Pixel Code -->
+
 <style>
   :root{
     --bg:#ffffff; --paper:#f5f7fb; --ink:#0b1c3d; --muted:#5a6a85; --line:#e5e9f2;
@@ -134,6 +152,12 @@
 </head>
 <body>
 
+<!-- Meta Pixel (noscript fallback) -->
+<noscript>
+  <img height="1" width="1" style="display:none"
+       src="https://www.facebook.com/tr?id=1278775833486145&ev=PageView&noscript=1" />
+</noscript>
+
 <a href="#main" class="visually-hidden" style="position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
 
 <!-- NAV: centered big logo, links beneath -->
@@ -141,12 +165,13 @@
   <div class="wrap nav-inner" aria-label="Top Navigation">
     <img class="brand-logo" src="https://i.ibb.co/dJ6pxS8V/Biznovatech-Logo-more-width.png" alt="Biznovatech Logo">
     <nav class="nav-links" role="navigation" aria-label="Primary">
-      <a class="link" href="#solution">Solution</a>
-      <a class="link" href="#examples">Examples</a>
-      <a class="link" href="#case-studies">Case Studies</a>
-      <a class="link" href="#pricing">Pricing</a>
-      <a class="link" href="#faq">FAQ</a>
-      <a class="btn ghost" href="https://wa.me/17743372572" target="_blank" rel="noopener">Talk to Sales</a>
+      <a class="link" href="#solution" data-event="NavLink" data-label="Solution">Solution</a>
+      <a class="link" href="#examples" data-event="NavLink" data-label="Examples">Examples</a>
+      <a class="link" href="#case-studies" data-event="NavLink" data-label="Case Studies">Case Studies</a>
+      <a class="link" href="#pricing" data-event="NavLink" data-label="Pricing">Pricing</a>
+      <a class="link" href="#faq" data-event="NavLink" data-label="FAQ">FAQ</a>
+      <a class="btn ghost" href="https://wa.me/17743372572" target="_blank" rel="noopener"
+         data-event="TalkToSales" data-source="WhatsApp" data-placement="Header">Talk to Sales</a>
     </nav>
   </div>
 </header>
@@ -165,9 +190,11 @@
           <li class="li"><i aria-hidden="true"></i><div><strong>Neutral, value-led messaging</strong> tuned for high-risk verticals.</div></li>
         </ul>
         <div class="hero-cta">
-          <a class="btn" href="#solution" aria-label="Get my demo">Get My Demo →</a>
-          <a class="btn alt" href="https://wa.me/17743372572" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp</a>
-          <a class="btn ghost" href="https://t.me/mark77771111" target="_blank" rel="noopener" aria-label="Chat on Telegram">Telegram</a>
+          <a class="btn" href="#solution" aria-label="Get my demo" data-event="CTA" data-label="Get My Demo">Get My Demo →</a>
+          <a class="btn alt" href="https://wa.me/17743372572" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
+             data-event="Contact" data-source="WhatsApp" data-placement="Hero">WhatsApp</a>
+          <a class="btn ghost" href="https://t.me/mark77771111" target="_blank" rel="noopener" aria-label="Chat on Telegram"
+             data-event="Contact" data-source="Telegram" data-placement="Hero">Telegram</a>
         </div>
         <p class="note">“Increase your business 10×” by compounding retention with installs + push.</p>
       </div>
@@ -202,8 +229,8 @@
             <textarea class="input" name="notes" rows="3" placeholder="Industry, KPIs, timelines…"></textarea>
           </label><br/><br/>
 
-          <button class="btn" type="submit">Request Demo</button>
-          <p class="note" style="margin-top:8px">Prefer chat? <a href="https://wa.me/17743372572" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://t.me/mark77771111" target="_blank" rel="noopener">Telegram</a> · <a href="mailto:sales@biznovatech.com">Email</a></p>
+          <button class="btn" type="submit" data-event="RequestDemo" data-placement="Form">Request Demo</button>
+          <p class="note" style="margin-top:8px">Prefer chat? <a href="https://wa.me/17743372572" target="_blank" rel="noopener" data-event="Contact" data-source="WhatsApp" data-placement="FormNote">WhatsApp</a> · <a href="https://t.me/mark77771111" target="_blank" rel="noopener" data-event="Contact" data-source="Telegram" data-placement="FormNote">Telegram</a> · <a href="mailto:sales@biznovatech.com" data-event="Contact" data-source="Email" data-placement="FormNote">Email</a></p>
         </form>
       </div>
     </div>
@@ -233,8 +260,12 @@
       <div class="card">
         <h3>Supported Niches</h3>
         <div class="list" role="list">
-          <span class="chip">iGaming</span> <span class="chip">Stocks/Trading</span> <span class="chip">Crypto</span>
-          <span class="chip">Lottery/Matka</span> <span class="chip">Adult</span> <span class="chip">Escorts</span>
+          <a class="chip" data-event="SectionChip" data-label="iGaming">iGaming</a>
+          <a class="chip" data-event="SectionChip" data-label="Stocks/Trading">Stocks/Trading</a>
+          <a class="chip" data-event="SectionChip" data-label="Crypto">Crypto</a>
+          <a class="chip" data-event="SectionChip" data-label="Lottery/Matka">Lottery/Matka</a>
+          <a class="chip" data-event="SectionChip" data-label="Adult">Adult</a>
+          <a class="chip" data-event="SectionChip" data-label="Escorts">Escorts</a>
         </div>
         <p class="note" style="margin-top:8px">We provide technology & neutral copy. You are responsible for local compliance.</p>
       </div>
@@ -353,9 +384,12 @@
         <h3 style="margin-bottom:8px">Discuss with our team for pricing</h3>
         <p class="muted">Share your website, traffic mix (paid/organic), markets, and timelines. We’ll scope deliverables and provide a quote.</p>
         <div class="hero-cta" style="margin-top:8px">
-          <a class="btn" href="https://wa.me/17743372572" target="_blank" rel="noopener">Talk to Sales</a>
-          <a class="btn alt" href="https://wa.me/17743372572" target="_blank" rel="noopener">WhatsApp</a>
-          <a class="btn ghost" href="https://t.me/mark77771111" target="_blank" rel="noopener">Telegram</a>
+          <a class="btn" href="https://wa.me/17743372572" target="_blank" rel="noopener"
+             data-event="Contact" data-source="WhatsApp" data-placement="Pricing">Talk to Sales</a>
+          <a class="btn alt" href="https://wa.me/17743372572" target="_blank" rel="noopener"
+             data-event="Contact" data-source="WhatsApp" data-placement="Pricing">WhatsApp</a>
+          <a class="btn ghost" href="https://t.me/mark77771111" target="_blank" rel="noopener"
+             data-event="Contact" data-source="Telegram" data-placement="Pricing">Telegram</a>
         </div>
       </div>
     </div>
@@ -369,9 +403,12 @@
           <h3>Talk to Sales</h3>
           <p class="muted">Fastest response on WhatsApp.</p>
           <div class="hero-cta" style="margin-top:8px">
-            <a class="btn" href="https://wa.me/17743372572" target="_blank" rel="noopener">WhatsApp</a>
-            <a class="btn ghost" href="mailto:sales@biznovatech.com">Email</a>
-            <a class="btn alt" href="https://t.me/mark77771111" target="_blank" rel="noopener">Telegram</a>
+            <a class="btn" href="https://wa.me/17743372572" target="_blank" rel="noopener"
+               data-event="Contact" data-source="WhatsApp" data-placement="Contact">WhatsApp</a>
+            <a class="btn ghost" href="mailto:sales@biznovatech.com"
+               data-event="Contact" data-source="Email" data-placement="Contact">Email</a>
+            <a class="btn alt" href="https://t.me/mark77771111" target="_blank" rel="noopener"
+               data-event="Contact" data-source="Telegram" data-placement="Contact">Telegram</a>
           </div>
         </div>
         <div class="card">
@@ -379,8 +416,10 @@
           <p><strong>India (Bengaluru)</strong><br/>63, 1st Floor, 16th Main, 8th Cross, BTM 1st Stage, BTM Layout, Bengaluru, Karnataka 560029</p>
           <p><strong>Dubai (U.A.E.)</strong><br/>911, Metropolis Tower, Business Bay, Dubai</p>
           <div class="list">
-            <a class="chip" href="https://maps.google.com/?q=BTM%201st%20Stage%2C%20Bengaluru%20560029" target="_blank" rel="noopener">India Map</a>
-            <a class="chip" href="https://maps.google.com/?q=Metropolis%20Tower%20Business%20Bay%20Dubai" target="_blank" rel="noopener">Dubai Map</a>
+            <a class="chip" href="https://maps.google.com/?q=BTM%201st%20Stage%2C%20Bengaluru%20560029" target="_blank" rel="noopener"
+               data-event="MapClick" data-label="India Map">India Map</a>
+            <a class="chip" href="https://maps.google.com/?q=Metropolis%20Tower%20Business%20Bay%20Dubai" target="_blank" rel="noopener"
+               data-event="MapClick" data-label="Dubai Map">Dubai Map</a>
           </div>
         </div>
       </div>
@@ -399,19 +438,19 @@
     <nav aria-label="Footer">
       <h4>Quick Links</h4>
       <div class="list" role="list">
-        <a href="#solution">Solution</a>
-        <a href="#examples">Examples</a>
-        <a href="#case-studies">Case Studies</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
+        <a href="#solution" data-event="FooterLink" data-label="Solution">Solution</a>
+        <a href="#examples" data-event="FooterLink" data-label="Examples">Examples</a>
+        <a href="#case-studies" data-event="FooterLink" data-label="Case Studies">Case Studies</a>
+        <a href="#pricing" data-event="FooterLink" data-label="Pricing">Pricing</a>
+        <a href="#faq" data-event="FooterLink" data-label="FAQ">FAQ</a>
       </div>
     </nav>
     <div>
       <h4>Contact</h4>
       <ul class="contact" style="list-style:none;padding:0;margin:0">
-        <li><a href="mailto:sales@biznovatech.com">sales@biznovatech.com</a></li>
-        <li><a href="https://wa.me/17743372572" target="_blank" rel="noopener">WhatsApp: +1 774 337 2572</a></li>
-        <li><a href="https://t.me/mark77771111" target="_blank" rel="noopener">Telegram: @mark77771111</a></li>
+        <li><a href="mailto:sales@biznovatech.com" data-event="Contact" data-source="Email" data-placement="Footer">sales@biznovatech.com</a></li>
+        <li><a href="https://wa.me/17743372572" target="_blank" rel="noopener" data-event="Contact" data-source="WhatsApp" data-placement="Footer">WhatsApp: +1 774 337 2572</a></li>
+        <li><a href="https://t.me/mark77771111" target="_blank" rel="noopener" data-event="Contact" data-source="Telegram" data-placement="Footer">Telegram: @mark77771111</a></li>
       </ul>
     </div>
     <div>
@@ -427,13 +466,16 @@
 
 <div class="sticky" aria-label="Quick contact">
   <div class="bar">
-    <a class="wa" href="https://wa.me/17743372572" target="_blank" rel="noopener">WhatsApp</a>
-    <a class="tg" href="https://t.me/mark77771111" target="_blank" rel="noopener">Telegram</a>
-    <a class="enq" href="mailto:sales@biznovatech.com">Enquiry</a>
+    <a class="wa" href="https://wa.me/17743372572" target="_blank" rel="noopener"
+       data-event="Contact" data-source="WhatsApp" data-placement="Sticky">WhatsApp</a>
+    <a class="tg" href="https://t.me/mark77771111" target="_blank" rel="noopener"
+       data-event="Contact" data-source="Telegram" data-placement="Sticky">Telegram</a>
+    <a class="enq" href="mailto:sales@biznovatech.com"
+       data-event="Contact" data-source="Email" data-placement="Sticky">Enquiry</a>
   </div>
 </div>
 
-<!-- JSON-LD -->
+<!-- JSON-LD (unchanged) -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"Biznovatech","url":"https://biznovatech.com","logo":"https://biznovatech.com/icon-256.png","contactPoint":[{"@type":"ContactPoint","contactType":"sales","email":"sales@biznovatech.com","telephone":"+1 774 337 2572","areaServed":"IN, AE"}],"address":[{"@type":"PostalAddress","addressCountry":"IN","addressLocality":"Bengaluru","streetAddress":"63, 1st Floor, 16th Main, 8th Cross, BTM 1st Stage, BTM Layout","postalCode":"560029"},{"@type":"PostalAddress","addressCountry":"AE","addressLocality":"Dubai","streetAddress":"911, Metropolis Tower, Business Bay"}]}
 </script>
@@ -471,6 +513,49 @@
       return hasScheme ? u.trim() : `https://${u.trim()}`;
     }
 
+    // ------- Pixel helper: attach click tracking to any element with data-event -------
+    function attachTracking(){
+      document.querySelectorAll('[data-event]').forEach(el=>{
+        el.addEventListener('click', function(){
+          try{
+            const ev = el.dataset.event || 'Click';
+            const payload = {
+              label: el.dataset.label || '',
+              source: el.dataset.source || '',
+              placement: el.dataset.placement || '',
+              utm_source: ATTR.utm_source,
+              utm_medium: ATTR.utm_medium,
+              utm_campaign: ATTR.utm_campaign,
+              page: ATTR.page
+            };
+            if (window.fbq) fbq('trackCustom', ev, payload);
+          }catch(e){}
+        }, {passive:true});
+      });
+    }
+    attachTracking();
+
+    // ------- Section view tracking (fires once when section becomes visible) -------
+    const sectionIds = ['examples','case-studies','pricing','faq','contact','solution'];
+    const seen = new Set();
+    if ('IntersectionObserver' in window){
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            const id = entry.target.id || entry.target.getAttribute('aria-labelledby') || 'section';
+            if(!seen.has(id)){
+              seen.add(id);
+              if(window.fbq) fbq('trackCustom','SectionView', {section:id, page:ATTR.page});
+            }
+          }
+        });
+      }, {threshold:0.35});
+      sectionIds.forEach(id=>{
+        const el = document.getElementById(id);
+        if(el) io.observe(el);
+      });
+    }
+
     const demoForm = document.getElementById('demoForm');
     if (demoForm){
       demoForm.addEventListener('submit', async (e)=>{
@@ -486,6 +571,7 @@
           notes: (raw.notes||'').trim(),
         };
 
+        // Validate/normalize country code and number
         const cc = /^\+\d{1,4}$/.test(data.cc) ? data.cc : '';
         const phone = `${cc}${data.phone_num.replace(/[^\d]/g,'')}`;
 
@@ -498,6 +584,22 @@
           ...ATTR
         };
 
+        // ---- Pixel: treat as Lead + custom event ----
+        try{
+          const domainOnly = (data.url || '').replace(/^https?:\/\//i,'').split('/')[0];
+          if (window.fbq){
+            fbq('track', 'Lead', {content_name: 'Demo Request'});
+            fbq('trackCustom','DemoRequest', {
+              page: ATTR.page,
+              utm_source: ATTR.utm_source,
+              utm_medium: ATTR.utm_medium,
+              utm_campaign: ATTR.utm_campaign,
+              website_domain: domainOnly || ''
+            });
+          }
+        }catch(e){}
+
+        // ---- Your existing POST (best-effort) ----
         try {
           await fetch('/api/demo', {
             method: 'POST',
@@ -506,6 +608,7 @@
           });
         } catch {}
 
+        // Redirect to WhatsApp with summary (no PII is sent to pixel above)
         const summary =
           `Demo Request:%0AName: ${encodeURIComponent(payload.name)}%0AURL: ${encodeURIComponent(data.url)}%0AEmail: ${encodeURIComponent(payload.email)}%0APhone: ${encodeURIComponent(phone)}%0ANotes: ${encodeURIComponent(payload.notes)}`;
         window.location.href = `https://wa.me/17743372572?text=${summary}`;
