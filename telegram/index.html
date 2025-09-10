@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Join Biznovatech Telegram</title>
+<meta name="description" content="Official Biznovatech Telegram channel. Tap below to join." />
+<meta name="theme-color" content="#0d6efd"/>
+
+<!-- Logo Favicon -->
+<link rel="icon" href="https://i.ibb.co/dJ6pxS8V/Biznovatech-Logo-more-width.png">
+
+<style>
+  body {
+    margin:0; padding:0; font-family:system-ui, -apple-system, Roboto, Arial, sans-serif;
+    background:#f5f7fb; display:flex; justify-content:center; align-items:center;
+    height:100vh; text-align:center;
+  }
+  .card {
+    background:#fff; border:1px solid #e5e9f2; border-radius:16px;
+    padding:40px 24px; box-shadow:0 12px 36px rgba(11,28,61,.08);
+    max-width:420px; width:100%;
+  }
+  img.logo { height:80px; margin-bottom:24px; }
+  h1 { font-size:22px; margin:0 0 16px; color:#0b1c3d; }
+  .btn {
+    display:inline-block; background:#229ED9; color:#fff;
+    padding:14px 22px; border-radius:12px; font-weight:700;
+    text-decoration:none; font-size:16px;
+    transition: background .2s;
+  }
+  .btn:hover { background:#1d8ac2; }
+  p.note { margin-top:16px; font-size:13px; color:#5a6a85; }
+</style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1278775833486145');
+fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+       src="https://www.facebook.com/tr?id=1278775833486145&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+
+<div class="card">
+  <img src="https://i.ibb.co/dJ6pxS8V/Biznovatech-Logo-more-width.png" alt="Biznovatech Logo" class="logo"/>
+  <h1>Join Biznovatech on Telegram</h1>
+  <a href="https://t.me/Biznovatech" target="_blank" rel="noopener" 
+     class="btn" id="joinBtn">Join Telegram</a>
+  <p class="note">Stay updated with our official channel.</p>
+</div>
+
+<script>
+  // Track purchase event when button clicked
+  document.getElementById("joinBtn").addEventListener("click", function(){
+    fbq('track', 'Purchase', {
+      value: 1.00,
+      currency: 'USD',
+      content_name: 'Telegram Join'
+    });
+  });
+</script>
+
+</body>
+</html>
