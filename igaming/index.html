@@ -1,372 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>iGaming Solutions — Native Android App + Landing Page + Push | Biznovatech</title>
-<meta name="description" content="iGaming growth stack: native Android app, install-first landing pages, and push notifications. Mirrors, deep links, odds feeds, KYC flows, and affiliate enablement." />
-<meta name="theme-color" content="#ffffff"/>
-<link rel="canonical" href="https://biznovatech.com/igaming/" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Pure Gaming P2P Gateway Solutions | Biznovatech</title>
+  <meta name="description" content="Pure Gaming P2P Gateway Solutions: fast deposits, smart routing, payout ops, risk checks, and reporting — with policy-aware, neutral messaging." />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="canonical" href="https://biznovatech.com/p2p-gateway/" />
 
-<!-- Social -->
-<meta property="og:title" content="iGaming Solutions — App + Landing + Push" />
-<meta property="og:description" content="Launch a native Android app, install-first landing, and push cadence for iGaming. Mirrors, odds/KYC flows, and more." />
-<meta property="og:type" content="website" />
-<meta property="og:image" content="https://biznovatech.com/og-image.png" />
-<meta property="og:url" content="https://biznovatech.com/igaming/" />
-<meta name="twitter:card" content="summary_large_image" />
+  <!-- Social -->
+  <meta property="og:title" content="Pure Gaming P2P Gateway Solutions" />
+  <meta property="og:description" content="P2P gateway stack for gaming: deposits, payouts ops, routing, risk checks, and dashboards." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://biznovatech.com/og-image.png" />
+  <meta property="og:url" content="https://biznovatech.com/p2p-gateway/" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-<style>
-  :root{
-    --bg:#ffffff; --paper:#f5f7fb; --ink:#0b1c3d; --muted:#5a6a85; --line:#e5e9f2;
-    --brand:#0d6efd; --brand-2:#ffcc00; --ok:#16a34a; --danger:#ef4444;
-    --shadow:0 12px 36px rgba(11,28,61,.08); --ring:0 0 0 3px rgba(13,110,253,.18);
-    --radius:16px;
-  }
-  *{box-sizing:border-box}
-  html:focus-within{scroll-behavior:smooth}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-  a{color:var(--brand);text-decoration:none}
-  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:none;box-shadow:var(--ring)}
-  img{max-width:100%;height:auto;display:block}
-  .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
-  .btn{display:inline-block;padding:14px 18px;border-radius:12px;font-weight:800;border:1px solid var(--brand);background:var(--brand);color:#fff;white-space:nowrap}
-  .btn.ghost{background:#fff;color:var(--brand)}
-  .btn.alt{background:var(--brand-2);border-color:var(--brand-2);color:#111}
-  .chip{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);font-size:12px}
-  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
-  .grid{display:grid;gap:18px}
-  .g-2{grid-template-columns:repeat(2,1fr)}
-  .g-3{grid-template-columns:repeat(3,1fr)}
-  .g-4{grid-template-columns:repeat(4,1fr)}
-  h1{font-size:clamp(26px,6vw,42px);line-height:1.12;margin:12px 0}
-  h2{font-size:clamp(22px,4vw,30px);margin:0 0 10px}
-  h3{font-size:clamp(18px,3vw,22px);margin:0 0 6px}
-  p.lead{font-size:clamp(15px,3.4vw,18px);color:var(--muted);margin-top:8px}
-  .muted{color:var(--muted)}
-  .section{padding:36px 0}
-  .section.alt{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .hero{padding:36px 0}
-  .hero .grid{grid-template-columns:1.15fr .85fr}
-  .badge{display:inline-block;padding:6px 10px;border-radius:8px;background:var(--brand-2);font-weight:800;color:#111}
-  .list{display:grid;gap:8px;margin-top:8px}
-  .li{display:flex;gap:10px;align-items:flex-start}
-  .li i{width:10px;height:10px;border-radius:50%;margin-top:8px;background:var(--brand)}
-  .note{font-size:12px;color:var(--muted)}
-  .nav{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 0}
-  .brand{display:flex;align-items:center;gap:10px}
-  .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--brand-2),#ffe680 60%);display:grid;place-items:center;font-weight:900;color:#111}
-  .nav-links{display:flex;gap:10px;flex-wrap:wrap}
-  .link{padding:10px 12px;border-radius:10px;border:1px solid var(--line);color:var(--ink)}
-  .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
-  .table{width:100%;border-collapse:collapse;border:1px solid var(--line);border-radius:12px;overflow:hidden}
-  .table th,.table td{border-bottom:1px solid var(--line);padding:12px;text-align:left}
-  .table th{background:#f9fbff}
-  .sticky{position:fixed;bottom:0;left:0;right:0;background:#ffffffee;backdrop-filter:saturate(140%) blur(8px);border-top:1px solid var(--line);display:flex;justify-content:center;z-index:60}
-  .sticky .bar{max-width:1200px;width:100%;padding:8px 20px;display:flex;gap:10px}
-  .sticky .bar a{flex:1;text-align:center;border-radius:10px;padding:12px 14px;font-weight:800}
-  .wa{background:#25D366;color:#111;border:1px solid #22c55e}
-  .tg{background:#229ED9;color:#111;border:1px solid #38bdf8}
-  .enq{background:var(--brand-2);color:#111;border:1px solid #f1c40f}
-  .input, textarea, select{width:100%;background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:12px;padding:12px;outline:none}
-  .row{display:flex;gap:10px}
-  .row .w-32{flex:0 0 32%} .row .w-68{flex:1}
-
-  /* Mobile tweaks */
-  @media (max-width: 980px){
-    .hero .grid,.g-4,.g-3,.g-2{grid-template-columns:1fr}
-    .nav .link{display:none}
-    .card{padding:18px}
-    .nav-inner{padding:8px 0}
-    body{padding-bottom:84px}
-    h1{word-break:break-word}
-    .row{flex-direction:column}
-  }
-</style>
+  <style>
+    :root{
+      --bg:#ffffff; --paper:#f5f7fb; --ink:#0b1c3d; --muted:#5a6a85; --line:#e5e9f2;
+      --brand:#0d6efd; --brand-2:#ffcc00; --shadow:0 12px 36px rgba(11,28,61,.08);
+      --ring:0 0 0 3px rgba(13,110,253,.18); --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;background:var(--bg);color:var(--ink);
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;
+      line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale
+    }
+    a{color:var(--brand);text-decoration:none}
+    a:focus-visible,button:focus-visible{outline:none;box-shadow:var(--ring)}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+    .hero{min-height:100svh;display:grid;place-items:center;padding:32px 0;background:linear-gradient(180deg,#fff, var(--paper))}
+    .card{
+      background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+      box-shadow:var(--shadow);padding:22px;max-width:920px;width:100%;
+    }
+    .badge{display:inline-block;padding:6px 10px;border-radius:8px;background:var(--brand-2);font-weight:900;color:#111}
+    h1{font-size:clamp(26px,5vw,44px);line-height:1.12;margin:12px 0}
+    p.lead{font-size:clamp(15px,2.8vw,18px);color:var(--muted);margin:8px 0 0}
+    .list{display:grid;gap:10px;margin:14px 0 0;padding:0;list-style:none}
+    .li{display:flex;gap:10px;align-items:flex-start}
+    .dot{width:10px;height:10px;border-radius:50%;margin-top:8px;background:var(--brand)}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .btn{
+      display:inline-block;padding:14px 18px;border-radius:12px;font-weight:900;
+      border:1px solid var(--brand);background:var(--brand);color:#fff;white-space:nowrap;text-align:center
+    }
+    .btn.ghost{background:#fff;color:var(--brand)}
+    .btn.alt{background:var(--brand-2);border-color:var(--brand-2);color:#111}
+    .note{font-size:12px;color:var(--muted);margin-top:12px}
+    @media (max-width: 980px){
+      .card{padding:18px}
+      h1{word-break:break-word}
+    }
+  </style>
 </head>
+
 <body>
+  <!-- SINGLE ELEMENT ONLY: HERO CARD -->
+  <main class="hero" aria-label="Pure Gaming P2P Gateway Solutions">
+    <div class="wrap">
+      <section class="card">
+        <span class="badge">Pure Gaming • P2P Gateway</span>
 
-<header class="nav" role="banner">
-  <div class="wrap nav-inner">
-    <div class="brand">
-      <div class="logo" aria-hidden="true">B</div>
-      <div>
-        <div style="font-weight:900;letter-spacing:.2px">Biznovatech</div>
-        <div class="muted" style="font-size:12px">iGaming • Native Android App • Landing • Push</div>
-      </div>
-    </div>
-    <nav class="nav-links" aria-label="Primary">
-      <a class="link" href="/">Home</a>
-      <a class="link" href="#features">Features</a>
-      <a class="link" href="#cases">Case Studies</a>
-      <a class="link" href="#process">Process</a>
-      <a class="link" href="#faq">FAQ</a>
-      <a class="btn ghost" href="https://wa.me/17743372572" target="_blank" rel="noopener">Talk to Sales</a>
-    </nav>
-  </div>
-</header>
+        <h1>
+          Pure Gaming <span style="color:var(--brand)">P2P Gateway Solutions</span><br/>
+          for Faster Deposits & Smoother Payout Operations
+        </h1>
 
-<main id="main" tabindex="-1">
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap grid">
-      <div class="card">
-        <span class="badge">iGaming Growth Suite</span>
-        <h1>Launch faster with <span style="color:var(--brand)">Native Android App + Install-first Landing + Push.</span></h1>
-        <p class="lead">Mirrors, deep links, onboarding push, KYC nudges, affiliate hooks, odds and live scores—implemented with neutral, policy-aware copy.</p>
-        <div class="hero-cta">
-          <a class="btn" href="#demo">Get iGaming Demo →</a>
+        <p class="lead">
+          End-to-end P2P flow: smart routing, agent/ops panels, UTR handling, retry controls, risk checks,
+          and reporting — built with neutral, policy-aware messaging.
+        </p>
+
+        <ul class="list" aria-label="Key capabilities">
+          <li class="li"><span class="dot" aria-hidden="true"></span><div><b>Deposit Flow:</b> UPI/Bank mapping, QR per amount, UTR capture, auto/manual verification hooks.</div></li>
+          <li class="li"><span class="dot" aria-hidden="true"></span><div><b>Payout Ops:</b> queue management, status tracking, operator actions, audit logs & exports.</div></li>
+          <li class="li"><span class="dot" aria-hidden="true"></span><div><b>Controls:</b> failure-rate blocking rules, limits, routing rules, dashboards & alerts.</div></li>
+        </ul>
+
+        <div class="cta" role="group" aria-label="Contact actions">
           <a class="btn alt" href="https://wa.me/17743372572" target="_blank" rel="noopener">WhatsApp</a>
           <a class="btn ghost" href="https://t.me/mark77771111" target="_blank" rel="noopener">Telegram</a>
+          <a class="btn" href="mailto:sales@biznovatech.com?subject=Pure%20Gaming%20P2P%20Gateway%20Enquiry&body=Hi%20Biznovatech%2C%0A%0AI%20want%20Pure%20Gaming%20P2P%20Gateway%20Solutions.%20Please%20share%20demo%20and%20pricing.%0A%0AThanks.">Email</a>
         </div>
-        <p class="note">We provide tech & neutral messaging; you are responsible for local compliance.</p>
-      </div>
-      <div class="card">
-        <h2 id="demo">Quick Demo Request</h2>
-        <p class="muted">Share your site; get an iGaming-specific preview.</p>
-        <form id="demoForm" aria-label="Demo request form">
-          <label>Full Name<br/>
-            <input class="input" type="text" name="name" placeholder="Your Name" autocomplete="name" required>
-          </label><br/><br/>
-          <label>Business / Website URL<br/>
-            <input class="input" type="text" name="url" placeholder="yourdomain.com or https://yourdomain.com" inputmode="url" required>
-          </label><br/><br/>
-          <label>Email<br/>
-            <input class="input" type="email" name="email" placeholder="you@company.com" autocomplete="email" required>
-          </label><br/><br/>
-          <label>Phone / WhatsApp</label>
-          <div class="row" style="margin-top:6px">
-            <input class="input w-32" name="cc" list="ccodes" placeholder="+91" inputmode="tel" pattern="\+\d{1,4}" aria-label="Country code" required>
-            <input class="input w-68" type="tel" name="phone_num" placeholder="Phone number" inputmode="tel" required>
-          </div><br/>
-          <label>Notes (optional)<br/>
-            <textarea class="input" name="notes" rows="3" placeholder="Markets, product, timelines…"></textarea>
-          </label><br/><br/>
-          <button class="btn" type="submit">Request Demo</button>
-          <p class="note" style="margin-top:8px">Prefer chat? <a href="https://wa.me/17743372572" target="_blank" rel="noopener">WhatsApp</a> · <a href="mailto:sales@biznovatech.com">Email</a></p>
-        </form>
-      </div>
+
+        <p class="note">
+          We provide technology + neutral messaging. You’re responsible for local compliance & policy adherence in your operating markets.
+        </p>
+      </section>
     </div>
-  </section>
-
-  <!-- FEATURES -->
-  <section id="features" class="section alt">
-    <div class="wrap g-3 grid">
-      <div class="card">
-        <h3>Native Android App</h3>
-        <ul class="list">
-          <li class="li"><i></i><div>Icon, splash, deep links, mirrors/fallbacks</div></li>
-          <li class="li"><i></i><div>Runtime config for markets & promos</div></li>
-          <li class="li"><i></i><div>Analytics hooks (client or server)</div></li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Install-first Landing</h3>
-        <ul class="list">
-          <li class="li"><i></i><div>Ad-ready, blazing fast, focused CTAs</div></li>
-          <li class="li"><i></i><div>Leaderboards / tourney promo blocks</div></li>
-          <li class="li"><i></i><div>SEO-safe content scaffolding</div></li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Push & Engagement</h3>
-        <ul class="list">
-          <li class="li"><i></i><div>Onboarding sequence (D0, D3, D7)</div></li>
-          <li class="li"><i></i><div>Segments (dormant, VIP, KYC pending)</div></li>
-          <li class="li"><i></i><div>90-day copy bank included</div></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- CASES -->
-  <section id="cases" class="section">
-    <div class="wrap g-3 grid">
-      <div class="card" role="figure" aria-label="Sportsbook">
-        <h3>Case — Sportsbook Boost</h3>
-        <table class="table">
-          <tr><th>Metric</th><th>Before</th><th>After</th></tr>
-          <tr><td>Install Rate</td><td>1.1%</td><td>3.4%</td></tr>
-          <tr><td>D7 Return</td><td>10%</td><td>23%</td></tr>
-          <tr><td>Re-activation</td><td>—</td><td>+39%</td></tr>
-        </table>
-        <p class="note">Tournament banner + push cadence lifted retention.</p>
-      </div>
-      <div class="card" role="figure" aria-label="Casino">
-        <h3>Case — Casino Reactivation</h3>
-        <table class="table">
-          <tr><th>Metric</th><th>Before</th><th>After</th></tr>
-          <tr><td>Install Rate</td><td>0.9%</td><td>2.8%</td></tr>
-          <tr><td>Dormant Winback</td><td>—</td><td>+44%</td></tr>
-          <tr><td>Support Tickets</td><td>100%</td><td>−30%</td></tr>
-        </table>
-        <p class="note">FAQ landing + mirrors reduced friction.</p>
-      </div>
-      <div class="card" role="figure" aria-label="Fantasy">
-        <h3>Case — Fantasy League</h3>
-        <table class="table">
-          <tr><th>Metric</th><th>Before</th><th>After</th></tr>
-          <tr><td>Install Rate</td><td>1.0%</td><td>3.1%</td></tr>
-          <tr><td>Referral Uptake</td><td>—</td><td>+52%</td></tr>
-          <tr><td>CPA (Install)</td><td>₹230</td><td>₹125</td></tr>
-        </table>
-        <p class="note">Referral hooks + leaderboard nudges.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section id="process" class="section alt">
-    <div class="wrap g-4 grid">
-      <div class="card"><h3>1. Align</h3><p class="muted">Brand, markets, mirrors, KPIs.</p></div>
-      <div class="card"><h3>2. Build</h3><p class="muted">App wrapper, landing, push wiring.</p></div>
-      <div class="card"><h3>3. Launch</h3><p class="muted">Ad-ready assets, tracking, deeplinks.</p></div>
-      <div class="card"><h3>4. Optimize</h3><p class="muted">Cadence tests, cohorts, promos.</p></div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="section">
-    <div class="wrap g-2 grid">
-      <div class="card">
-        <h3>Play Store?</h3>
-        <p>Distribution can be direct (APK) or alt stores. We’ll recommend per market/policy.</p>
-      </div>
-      <div class="card">
-        <h3>Odds / KYC / Payments?</h3>
-        <p>We integrate your chosen vendors or provide neutral guidance and hooks.</p>
-      </div>
-      <div class="card">
-        <h3>Analytics?</h3>
-        <p>Client or server pipelines supported (Pixels/CAPI) with install & event tracking.</p>
-      </div>
-      <div class="card">
-        <h3>Timeline?</h3>
-        <p>Usually days from asset approval.</p>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- FOOTER (compact) -->
-<footer role="contentinfo">
-  <div class="wrap" style="padding:20px 20px 80px;color:var(--muted)">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-      <div class="logo" aria-hidden="true">B</div>
-      <div>
-        <div style="font-weight:900">Biznovatech</div>
-        <div style="font-size:12px">Own your audience.</div>
-      </div>
-    </div>
-    <p class="muted">Native Android App + Landing Page + Push for iGaming.</p>
-    <div class="list" style="margin-top:8px">
-      <span class="chip">Native Android App</span><span class="chip">Install-first LP</span><span class="chip">Push Cadence</span><span class="chip">Mirrors</span>
-    </div>
-    <div style="margin-top:10px;font-size:12px">© <span id="year"></span> Biznovatech. All rights reserved.</div>
-  </div>
-</footer>
-
-<!-- STICKY CONTACT BAR -->
-<div class="sticky" aria-label="Quick contact">
-  <div class="bar">
-    <a class="wa" href="https://wa.me/17743372572" target="_blank" rel="noopener">WhatsApp</a>
-    <a class="tg" href="https://t.me/mark77771111" target="_blank" rel="noopener">Telegram</a>
-    <a class="enq" href="mailto:sales@biznovatech.com">Enquiry</a>
-  </div>
-</div>
-
-<script>
-  // Year
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Lazy-load future images if any
-  document.querySelectorAll('img').forEach(img => { if(!img.hasAttribute('loading')) img.setAttribute('loading','lazy'); });
-
-  (function(){
-    const qs = new URLSearchParams(location.search);
-    const ATTR = {
-      page: location.href,
-      utm_source: qs.get('utm_source') || '',
-      utm_medium: qs.get('utm_medium') || '',
-      utm_campaign: qs.get('utm_campaign') || ''
-    };
-
-    function normalizeUrl(u){
-      if(!u) return '';
-      const hasScheme = /^https?:\/\//i.test(u);
-      return hasScheme ? u : `https://${u}`;
-    }
-
-    const f = document.getElementById('demoForm');
-    if (!f) return;
-    f.addEventListener('submit', async (e)=>{
-      e.preventDefault();
-      const d = Object.fromEntries(new FormData(f).entries());
-      const phone = `${d.cc || ''}${(d.phone_num || '').replace(/[^\d]/g,'')}`;
-      const payload = {
-        name: d.name,
-        url: normalizeUrl(d.url),
-        email: d.email,
-        phone,
-        notes: d.notes || '',
-        niche: 'igaming',
-        ...ATTR
-      };
-      try{
-        await fetch('/api/demo',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
-      }catch{}
-      const summary =
-        `iGaming Demo:%0AName: ${encodeURIComponent(payload.name)}%0AURL: ${encodeURIComponent(d.url)}%0AEmail: ${encodeURIComponent(payload.email)}%0APhone: ${encodeURIComponent(phone)}%0ANotes: ${encodeURIComponent(payload.notes)}`;
-      location.href = `https://wa.me/17743372572?text=${summary}`;
-      f.reset();
-    });
-  })();
-</script>
-
-<!-- International dialing code datalist (same as homepage) -->
-<datalist id="ccodes">
-  <option value="+1">United States / Canada & NANP</option>
-  <option value="+20">Egypt</option><option value="+27">South Africa</option><option value="+30">Greece</option>
-  <option value="+31">Netherlands</option><option value="+32">Belgium</option><option value="+33">France</option>
-  <option value="+34">Spain</option><option value="+39">Italy / Vatican</option><option value="+40">Romania</option>
-  <option value="+41">Switzerland</option><option value="+43">Austria</option><option value="+44">United Kingdom</option>
-  <option value="+45">Denmark</option><option value="+46">Sweden</option><option value="+47">Norway</option>
-  <option value="+48">Poland</option><option value="+49">Germany</option><option value="+52">Mexico</option>
-  <option value="+54">Argentina</option><option value="+55">Brazil</option><option value="+56">Chile</option>
-  <option value="+57">Colombia</option><option value="+58">Venezuela</option><option value="+60">Malaysia</option>
-  <option value="+61">Australia</option><option value="+62">Indonesia</option><option value="+63">Philippines</option>
-  <option value="+64">New Zealand</option><option value="+65">Singapore</option><option value="+66">Thailand</option>
-  <option value="+81">Japan</option><option value="+82">South Korea</option><option value="+84">Vietnam</option>
-  <option value="+86">China</option><option value="+90">Türkiye</option><option value="+91">India</option>
-  <option value="+92">Pakistan</option><option value="+93">Afghanistan</option><option value="+94">Sri Lanka</option>
-  <option value="+95">Myanmar</option><option value="+971">United Arab Emirates</option><option value="+974">Qatar</option>
-  <option value="+966">Saudi Arabia</option><option value="+968">Oman</option><option value="+973">Bahrain</option>
-  <option value="+972">Israel</option><option value="+880">Bangladesh</option><option value="+977">Nepal</option>
-  <option value="+98">Iran</option><option value="+7">Russia / Kazakhstan</option><option value="+380">Ukraine</option>
-  <option value="+351">Portugal</option><option value="+353">Ireland</option><option value="+354">Iceland</option>
-  <option value="+355">Albania</option><option value="+356">Malta</option><option value="+357">Cyprus</option>
-  <option value="+358">Finland</option><option value="+420">Czechia</option><option value="+421">Slovakia</option>
-  <option value="+372">Estonia</option><option value="+371">Latvia</option><option value="+370">Lithuania</option>
-  <option value="+385">Croatia</option><option value="+386">Slovenia</option><option value="+387">Bosnia & Herzegovina</option>
-  <option value="+389">North Macedonia</option><option value="+375">Belarus</option><option value="+376">Andorra</option>
-  <option value="+377">Monaco</option><option value="+378">San Marino</option><option value="+423">Liechtenstein</option>
-  <option value="+501">Belize</option><option value="+502">Guatemala</option><option value="+503">El Salvador</option>
-  <option value="+504">Honduras</option><option value="+505">Nicaragua</option><option value="+506">Costa Rica</option>
-  <option value="+507">Panama</option><option value="+509">Haiti</option><option value="+51">Peru</option>
-  <option value="+591">Bolivia</option><option value="+592">Guyana</option><option value="+593">Ecuador</option>
-  <option value="+594">French Guiana</option><option value="+595">Paraguay</option><option value="+596">Martinique</option>
-  <option value="+597">Suriname</option><option value="+598">Uruguay</option><option value="+599">Curaçao / Caribbean NL</option>
-  <option value="+212">Morocco</option><option value="+213">Algeria</option><option value="+216">Tunisia</option>
-  <option value="+218">Libya</option><option value="+234">Nigeria</option><option value="+233">Ghana</option>
-  <option value="+254">Kenya</option><option value="+255">Tanzania</option><option value="+256">Uganda</option>
-  <option value="+260">Zambia</option><option value="+263">Zimbabwe</option><option value="+251">Ethiopia</option>
-  <option value="+971">United Arab Emirates</option><option value="+972">Israel</option><option value="+973">Bahrain</option>
-  <option value="+974">Qatar</option><option value="+975">Bhutan</option><option value="+976">Mongolia</option>
-  <option value="+998">Uzbekistan</option><option value="+996">Kyrgyzstan</option><option value="+995">Georgia</option>
-  <option value="+994">Azerbaijan</option><option value="+992">Tajikistan</option><option value="+993">Turkmenistan</option>
-  <!-- Add/extend as needed; matches homepage coverage -->
-</datalist>
-
+  </main>
 </body>
 </html>
