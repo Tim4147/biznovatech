@@ -98,7 +98,6 @@ fbq('track', 'ViewContent', {content_name: 'Agent Landing'});
     border-top:1px solid var(--line);display:flex;justify-content:center;z-index:60}
   .sticky .bar{max-width:1100px;width:100%;padding:8px 20px;display:flex;gap:10px}
   .sticky .bar a{flex:1;text-align:center;border-radius:10px;padding:12px 14px;font-weight:900}
-  .wa{background:#25D366;color:#111;border:1px solid #22c55e}
   .tg{background:#229ED9;color:#111;border:1px solid #38bdf8}
   .enq{background:var(--brand-2);color:#111;border:1px solid #f1c40f}
 
@@ -135,8 +134,8 @@ fbq('track', 'ViewContent', {content_name: 'Agent Landing'});
       <a class="link" href="#earn" data-event="NavLink" data-label="Earnings">Earnings</a>
       <a class="link" href="#apply" data-event="NavLink" data-label="Apply">Apply</a>
       <a class="link" href="#faq" data-event="NavLink" data-label="FAQ">FAQ</a>
-      <a class="btn ghost" href="https://wa.me/17743372572" target="_blank" rel="noopener"
-         data-event="TalkToSales" data-source="WhatsApp" data-placement="Header">Talk to Sales</a>
+      <a class="btn ghost" href="mailto:sales@biznovatech.com"
+         data-event="TalkToSales" data-source="Email" data-placement="Header">Talk to Sales</a>
     </nav>
   </div>
 </header>
@@ -162,10 +161,10 @@ fbq('track', 'ViewContent', {content_name: 'Agent Landing'});
 
         <div class="hero-cta">
           <a class="btn" href="#apply" data-event="CTA" data-label="BecomeAgent">Become an Agent →</a>
-          <a class="btn alt" href="https://wa.me/17743372572" target="_blank" rel="noopener"
-             data-event="Contact" data-source="WhatsApp" data-placement="Hero">WhatsApp</a>
           <a class="btn ghost" href="https://t.me/mark77771111" target="_blank" rel="noopener"
              data-event="Contact" data-source="Telegram" data-placement="Hero">Telegram</a>
+          <a class="btn alt" href="mailto:sales@biznovatech.com"
+             data-event="Contact" data-source="Email" data-placement="Hero">Email</a>
         </div>
 
         <p class="note">We provide operations software & SOP. You must follow compliance requirements applicable to your region.</p>
@@ -174,7 +173,7 @@ fbq('track', 'ViewContent', {content_name: 'Agent Landing'});
       <!-- APPLY BOX -->
       <div class="card" id="apply">
         <h2>Agent Application (Quick)</h2>
-        <p class="muted">Fill details → we redirect you to WhatsApp with a pre-filled message.</p>
+        <p class="muted">Fill details → we redirect you to Telegram with a pre-filled message.</p>
 
         <form id="agentForm" aria-label="Agent application form" style="margin-top:10px">
           <label>Full Name<br/>
@@ -185,13 +184,14 @@ fbq('track', 'ViewContent', {content_name: 'Agent Landing'});
             <input class="input" type="text" name="location" placeholder="Your City, State" required>
           </label><br/><br/>
 
-          <label>Phone / WhatsApp</label>
-          <div class="row" style="margin-top:6px">
-            <input class="input w-32" name="cc" list="ccodes" placeholder="+91"
-                   inputmode="tel" autocomplete="tel-country-code" pattern="\+\d{1,4}" aria-label="Country code" required>
-            <input class="input w-68" type="tel" name="phone_num" placeholder="Phone number"
-                   inputmode="tel" autocomplete="tel-national" required>
-          </div><br/>
+          <label>Phone (for verification)<br/>
+            <div class="row" style="margin-top:6px">
+              <input class="input w-32" name="cc" list="ccodes" placeholder="+91"
+                     inputmode="tel" autocomplete="tel-country-code" pattern="\+\d{1,4}" aria-label="Country code" required>
+              <input class="input w-68" type="tel" name="phone_num" placeholder="Phone number"
+                     inputmode="tel" autocomplete="tel-national" required>
+            </div>
+          </label><br/>
 
           <label>Availability (optional)<br/>
             <input class="input" type="text" name="availability" placeholder="e.g., 10 AM – 10 PM">
@@ -203,9 +203,8 @@ fbq('track', 'ViewContent', {content_name: 'Agent Landing'});
 
           <button class="btn" type="submit" data-event="AgentFormSubmit" data-placement="ApplyForm">Submit Application</button>
           <p class="note" style="margin-top:8px">
-            Prefer chat?
-            <a href="https://wa.me/17743372572" target="_blank" rel="noopener">WhatsApp</a>
-            · <a href="https://t.me/mark77771111" target="_blank" rel="noopener">Telegram</a>
+            Prefer direct contact?
+            <a href="https://t.me/mark77771111" target="_blank" rel="noopener">Telegram</a>
             · <a href="mailto:sales@biznovatech.com">Email</a>
           </p>
         </form>
@@ -273,8 +272,8 @@ fbq('track', 'ViewContent', {content_name: 'Agent Landing'});
         </div>
         <div class="hero-cta" style="margin-top:12px">
           <a class="btn alt" href="#apply" data-event="CTA" data-label="ApplyFromEarn">Become an Agent</a>
-          <a class="btn ghost" href="https://wa.me/17743372572" target="_blank" rel="noopener"
-             data-event="Contact" data-source="WhatsApp" data-placement="Earn">Chat on WhatsApp</a>
+          <a class="btn ghost" href="https://t.me/mark77771111" target="_blank" rel="noopener"
+             data-event="Contact" data-source="Telegram" data-placement="Earn">Chat on Telegram</a>
         </div>
       </div>
     </div>
@@ -331,7 +330,6 @@ fbq('track', 'ViewContent', {content_name: 'Agent Landing'});
 
 <div class="sticky" aria-label="Quick contact">
   <div class="bar">
-    <a class="wa" href="https://wa.me/17743372572" target="_blank" rel="noopener" data-event="Contact" data-source="WhatsApp" data-placement="Sticky">WhatsApp</a>
     <a class="tg" href="https://t.me/mark77771111" target="_blank" rel="noopener" data-event="Contact" data-source="Telegram" data-placement="Sticky">Telegram</a>
     <a class="enq" href="mailto:sales@biznovatech.com" data-event="Contact" data-source="Email" data-placement="Sticky">Enquiry</a>
   </div>
@@ -353,7 +351,6 @@ fbq('track', 'ViewContent', {content_name: 'Agent Landing'});
       try{ if(window.fbq) fbq('trackCustom', ev, payload || {}); }catch(e){}
     }
 
-    // Click tracking for elements with data-event
     document.querySelectorAll('[data-event]').forEach(el=>{
       el.addEventListener('click', function(){
         trackCustom(el.dataset.event || 'Click', {
@@ -368,7 +365,7 @@ fbq('track', 'ViewContent', {content_name: 'Agent Landing'});
       }, {passive:true});
     });
 
-    // Agent form -> WA redirect
+    // Agent form -> Telegram redirect (pre-filled message)
     function cleanCc(v){ return /^\+\d{1,4}$/.test((v||'').trim()) ? (v||'').trim() : ''; }
     function onlyDigits(v){ return (v||'').replace(/[^\d]/g,''); }
 
@@ -381,7 +378,6 @@ fbq('track', 'ViewContent', {content_name: 'Agent Landing'});
         const cc = cleanCc(raw.cc);
         const phone = `${cc}${onlyDigits(raw.phone_num)}`;
 
-        // Pixel lead event (no sensitive details)
         try{
           if (window.fbq){
             fbq('track', 'Lead', {content_name: 'Agent Application'});
@@ -389,15 +385,18 @@ fbq('track', 'ViewContent', {content_name: 'Agent Landing'});
           }
         }catch(e){}
 
-        const msg =
-          `Agent Application (Gaming P2P):%0A`+
-          `Name: ${encodeURIComponent((raw.name||'').trim())}%0A`+
-          `Location: ${encodeURIComponent((raw.location||'').trim())}%0A`+
-          `Phone: ${encodeURIComponent(phone)}%0A`+
-          `Availability: ${encodeURIComponent((raw.availability||'').trim())}%0A`+
-          `Notes: ${encodeURIComponent((raw.notes||'').trim())}`;
+        const text =
+          `Agent Application (Gaming P2P)\n`+
+          `Name: ${(raw.name||'').trim()}\n`+
+          `Location: ${(raw.location||'').trim()}\n`+
+          `Phone: ${phone}\n`+
+          `Availability: ${(raw.availability||'').trim()}\n`+
+          `Notes: ${(raw.notes||'').trim()}`;
 
-        window.location.href = `https://wa.me/17743372572?text=${msg}`;
+        // Telegram deep link: opens chat with username and pre-fills message
+        const tgUrl = `https://t.me/mark77771111?text=${encodeURIComponent(text)}`;
+        window.location.href = tgUrl;
+
         agentForm.reset();
       });
     }
